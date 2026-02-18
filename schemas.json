@@ -1,0 +1,2288 @@
+{ "industry": "SaaS", 
+    "categories": {
+        "Bussiness Development": {
+            "SOP": {
+  "SOP_Number": "",
+  "Department": "Bussiness Development",
+  "Effective_Date": "",
+  "Review_Date": "",
+  "Prepared_By": "",
+  "Version": "",
+  "Purpose": "",
+  "Scope": "",
+  "Process_Overview_Snapshot": "",
+  "Roles_Responsibilities_Stakeholders": {
+    "Business Manager": [], 
+    "Engineering Team": [],
+    "Sales and Marketing Team": []
+  },
+  "Inputs_and_Outputs": {
+    "Inputs": [],
+    "Outputs": []
+  },
+  "Procedure": {
+    "Steps": []
+  },
+  "KPIs_and_Metrics": [],
+  "Risks_and_Controls": [],
+  "Process_Improvement_Notes": "",
+  "Documentation_and_Recordkeeping": "",
+  "Revision_History": [],
+  "Approvals": []
+}, "Business Plan": {
+  "business_plan": {
+    "mission": "",
+    "vision": "",
+    "core_offering": "",
+    "target_segments": "",
+    "customer_problem": "",
+    "solution": "",
+    "revenue_model": "",
+    "marketing_channels": "",
+    "sales_approach": "",
+    "milestones": {
+      "quarterly_goals": ""
+    },
+    "key_success_indicators": ""
+  }
+}, "Executive Summary": {
+  "company_name": "",
+  "contact_person_name": "",
+  "contact_person_number": "",
+  "contact_person_email": "",
+  "company_description": "",
+  "problem_opportunity": "",
+  "our_solution": "",
+  "market": "",
+  "clients": "",
+  "revenue_model": "",
+  "marketing_and_sales_channels": ""
+}, "Business Consulting Proposal": {
+  "proposal_for": "",
+  "due_date_and_time": "",
+  "consulting_company": "",
+  "submitted_by": "",
+  "response_contact": "",
+  "transmittal_letter": {
+    "date": "",
+    "from": "",
+    "name_company_address": "",
+    "to": "",
+    "subject": "",
+    "body": "",
+    "name_and_title": ""
+  },
+  "company_background_and_general_information": "",
+  "contract_history": "",
+  "proposed_priority_procurement_areas": {
+    "due_diligence": "",
+    "evaluation_and_scoring_of_technical_merit": "",
+    "evaluation_of_cost": "",
+    "accountability_for_decision_making": "",
+    "protest_procedures": ""
+  },
+  "proposed_approach": {
+    "steps": []
+  },
+  "proposed_team": [
+    {
+      "name": "",
+      "role": "",
+      "area_of_focus": ""
+    }
+  ],
+  "references": [
+    {
+      "name": "",
+      "company": "",
+      "location": "",
+      "phone": "",
+      "email": ""
+    }
+  ],
+  "our_clients": [],
+  "proposed_timeline": [
+    {
+      "phase": ""
+    }
+  ],
+  "proposed_cost_breakdown": {
+    "items": [
+      {
+        "deliverable_description": "",
+        "submission_date": "",
+        "invoice_date": "",
+        "invoice_price": ""
+      }
+    ],
+    "total": ""
+  },
+  "other_relevant_information": "",
+  "appendix_proposed_staff_resumes": [
+    {
+      "name_and_title": "",
+      "duties_and_responsibilities": "",
+      "industry_and_related_experience": "",
+      "notable_achievements": "",
+      "education": ""
+    }
+  ]
+}, "Continuity Plan": {
+  "continuityPlan": {
+    "purposeOfThePlan": "",
+    "planObjectives": "",
+    "scopeAvailability": "",
+    "continuityLeadership": {
+      "continuityTeamRolesAndContacts": [
+        {
+          "name": "",
+          "role": "",
+          "responsibility": "",
+          "phone": "",
+          "email": ""
+        }
+      ],
+      "authorityAndActivation": ""
+    },
+    "riskAndThreat": {
+      "identifiedRiskAndVulnerability": "",
+      "riskLikelihoodAndImpact": "",
+      "criticalDependencies": "",
+      "riskAnalysisSummary": [
+        {
+          "riskType": "",
+          "likelihood": "",
+          "impact": "",
+          "preventiveAction": ""
+        }
+      ]
+    },
+    "Business Impact Analysis": {
+      "criticalBusinessFunctions": [
+        {
+          "function": "",
+          "rto": "",
+          "rpo": "",
+          "owner": "",
+          "dependencies": ""
+        }
+      ],
+      "recoveryTimeObjectives": "",
+      "recoveryPointObjectives": ""
+    },
+    "responseAndRecoveryStrategies": {
+      "emergencyResponseActions": "",
+      "communicationProtocols": "",
+      "dataAndSystemsRecovery": "",
+      "facilityAndAssetContinuity": ""
+    },
+    "continuityScenarios": {
+      "scenarioResponseSummary": [
+        {
+          "scenario": "",
+          "impactLevel": "",
+          "primaryResponseActions": "",
+          "teamInvolved": ""
+        }
+      ]
+    },
+    "continuityPlanActivation": {
+      "triggerConditions": "",
+      "escalationAndNotification": "",
+      "activationProcedures": ""
+    },
+    "testingAndMaintenance": {
+      "testingSchedule": "",
+      "trainingAndAwareness": "",
+      "planAndReviewUpdateSchedule": "",
+      "testingAndReviewLog": [
+        {
+          "testType": "",
+          "date": "",
+          "leadCoordinator": "",
+          "resultSummary": "",
+          "followUpAction": ""
+        }
+      ]
+    }
+  }
+}, "PESTLE Analysis": {
+  "pestle_analysis": {
+    "description": "Political, Economic, Social, Technological, Legal, Environmental influence",
+    "general_info": {
+      "company_name": "",
+      "date": ""
+    },
+    "political_factors": [],
+    "economic_factors": [],
+    "social_factors": [],
+    "technological_factors": [],
+    "legal_factors": [],
+    "environmental_factors": []
+  }
+}, "Business Impact Analysis": {
+  "businessImpactAnalysis": {
+    "generalInformation": {
+      "organisationName": "",
+      "dateOfBIA": "",
+      "biaConsultedBy": "",
+      "biaContactInformation": ""
+    },
+    "riskIdentification": {
+      "description": "List potential risks and disruptions that could affect your organisation. Include natural disasters, technological failures and supply chain disruptions.",
+      "risks": []
+    },
+    "businessFunctions": {
+      "criticalBusinessFunctionsOrProcesses": [],
+      "responsibleDepartmentOrIndividual": []
+    },
+    "criticalityAssessment": {
+      "levels": ["high", "medium", "low"]
+    },
+    "maximumTolerableDowntime": "",
+    "recoveryTimeObjective": ""
+  }
+}, "Industry Analysis Checklist": {
+  "purpose": "Checklist to help define your position in your industry and identify possible niche markets for your product.",
+  "sections": {
+    "competition_analysis": {
+      "new_competitors": {
+        "question1": "Are there any new competitors in the arena?",
+        "is_hot_idea": "Does everyone think this is a hot idea?"
+      },
+      "recent_failures": {
+        "question": "Have any competitors gone out of business recently?",
+        "reason_for_failure": "Why did they fail?"
+      },
+      "market_entry_barriers": {
+        "no_new_entries_reason": "If there have been no new entries in the market, is it due to fatal flaws, first-mover advantage, or unresolved problems?"
+      },
+      "market_density": {
+        "competitor_market_ratio": "Are there a small number of competitors for a large market, or a large number for a small market?"
+      },
+      "large_vs_small_players": {
+        "dominant_companies": "Are the competitors large companies?",
+        "niche_opportunity": "Can you fill a small but profitable niche?",
+        "capital_strength": "Do you have the capital to compete head-to-head?",
+        "risk_of_attack": "Are you at risk of being attacked by large established corporations?"
+      }
+    },
+    "innovation_analysis": {
+      "recent_innovation": {
+        "question2": "Has there been recent innovation in the market?",
+        "profit_margin_issue": "Are low profit margins discouraging innovation?",
+        "corporate_complacency": "Are large corporations becoming complacent, creating opportunity?"
+      },
+      "service_quality_gap": {
+        "question3": "Is there room for improvement in service quality?",
+        "competitive_edge": "Can improved service provide an advantage?"
+      }
+    },
+    "market_history_analysis": {
+      "market_type": {
+        "new_market": "Is this a new and rapidly growing market?",
+        "old_market": "Is this a mature or old market?"
+      },
+      "entry_strategy": {
+        "new_market_strategy": "In a new market, speed and adaptability are critical.",
+        "old_market_strategy": "In an old market, innovation and differentiation are necessary."
+      }
+    }
+  }
+}
+        }, 
+        "Engineering and IT": {
+            "SOP": {
+    "company_name": "",
+    "address": "",
+    "version": "",
+    "date": "",
+    "department": "",
+    "version_history": {
+      "no": "",
+      "current_date": "",
+      "effective_date": "",
+      "expiration_date": "",
+      "responsible_person": "",
+      "signature": "",
+      "writer": "",
+      "approval": ""
+    },
+    "review_procedure": "",
+    "purpose": "",
+    "scope": "",
+    "roles_and_responsibilities": "",
+    "keywords_and_definitions": "",
+    "essential_business_functions": "",
+    "procedures": "",
+    "flowchart": "",
+    "troubleshooting": "",
+    "checklists": "",
+    "service_continuity": "",
+    "escalations": "",
+    "record_management": "",
+    "maintenance": "",
+    "equipment_hardware_and_software": "",
+    "configuration": "",
+    "diagrams": "",
+    "service_review": "",
+    "service_catalogue": "",
+    "change_process": "",
+    "references": "",
+    "signatures": ""
+  }, "Operational Plan": {
+    "business_name": "",
+    "creator": "",
+    "date": "",
+    "executive_summary": "",
+    "objectives": [
+      {
+        "goal": "",
+        "strategy": "",
+        "activity": "",
+        "responsible_party": "",
+        "resources_needed": "",
+        "start_date": "",
+        "end_date": "",
+        "evidence_of_success": "",
+        "risks": ""
+      }
+    ],
+    "summaries": {
+      "hiring_plan": "",
+      "notes": "",
+      "next_steps": ""
+    }
+  }, "Proposal": {
+    "submitted_by": {
+      "manager_name": "",
+      "by_company_name": ""
+    },
+    "submitted_to": {
+      "client_name": "",
+      "to_company_name": ""
+    },
+    "sections": [
+      {
+        "title1": "Introduction & IT Assessment",
+        "description1": "Introduce the consulting company and explain the client's IT challenges and areas that need improvement."
+      },
+      {
+        "title2": "Services & Technology",
+        "description2": "Describe the services provided as part of the IT consultancy."
+      },
+      {
+        "title3": "Project Goals and Objectives"
+      },
+      {
+        "title4": "IT Needs",
+        "description4": "List the results the consulting company will deliver."
+      },
+      {
+        "title5": "Deliverables and Testing"
+      },
+      {
+        "title6": "Our Recommendations"
+      },
+      {
+        "title7": "Project Timeline"
+      },
+      {
+        "title8": "Your Investment"
+      },
+      {
+        "title9": "Why Choose Us?"
+      },
+      {
+        "title10": "Next Steps"
+      },
+      {
+        "title11": "Terms and Conditions"
+      }
+    ],
+    "contact_information": {
+      "company_name": "",
+      "point_of_contact": "",
+      "email": "",
+      "phone": ""
+    }
+  }
+        },
+        "Finance and Accounts": {
+            "Business Income Statement": {
+  "company_name": "",
+  "income_statement": {
+    "reporting_period": {
+      "starting_date": "",
+      "ending_date": ""
+    },
+    "revenue": {
+      "sales": 0,
+      "others": 0,
+      "gross": 0
+    },
+    "cost_of_goods_sold": 0,
+    "gross_profit": 0,
+    "expenses": {
+      "wages_and_benefits": 0,
+      "rent_mortgage": 0,
+      "utilities": 0,
+      "office_supplies": 0,
+      "internet_phone": 0,
+      "travel": 0,
+      "insurance": 0,
+      "interest": 0,
+      "depreciation": 0,
+      "taxes": 0,
+      "other_expenses": 0,
+      "total_expenses": 0
+    },
+    "net_income": 0
+  }
+}, "Balance Sheet": {
+    "title": "Balance Sheet",
+    "metrics": [
+      "Time Period Covered",
+      "Total Current Assets",
+      "Total Current Liabilities",
+      "Total Current Equity"
+    ],
+    "table": {
+      "headers": ["Categories", "FY1 (Prior Year)", "FY2 (Current Year)"],
+      "rows": [
+        {
+          "category": "Current Assets",
+          "ca1": "",
+          "ca2": ""
+        },
+        {
+          "category": "Fixed Assets",
+          "fa1": "",
+          "fa2": ""
+        },
+        {
+          "category": "Other",
+          "ot1": "",
+          "ot2": ""
+        },
+        {
+          "category": "Current Liabilities",
+          "cl1": "",
+          "cl2": ""
+        },
+        {
+          "category": "Intermediate Liabilities",
+          "il1": "",
+          "il2": ""
+        },
+        {
+          "category": "Long-Term Liabilities",
+          "ltl1": "",
+          "ltl2": ""
+        },
+        {
+          "category": "Owner Equity",
+          "oe1": "",
+          "oe2": ""
+        }
+      ]
+    }
+  }, "Annual Expense Report": {
+    "name": "",
+    "title": "",
+    "report_term": "",
+    "employee_id": "",
+    "supervisor": "",
+    "department": "",
+    "quaterly expenses": {
+      "housing": {
+        "h1": "",
+        "h2": "",
+        "h3": "",
+        "h4": "",
+        "htotal": ""
+      },
+      "utilities": {
+        "u1": "",
+        "u2": "",
+        "u3": "",
+        "u4": "",
+        "utotal": ""
+      },
+      "personal": {
+        "p1": "",
+        "p2": "",
+        "p3": "",
+        "p4": "",
+        "ptotal": ""
+      },
+      "food": {
+        "f1": "",
+        "f2": "",
+        "f3": "",
+        "f4": "",
+        "ftotal": ""
+      },
+      "transportation": {
+        "t1": "",
+        "t2": "",
+        "t3": "",
+        "t4": "",
+        "ttotal": ""
+      },
+      "other": {
+        "o1": "",
+        "o2": "",
+        "o3": "",
+        "o4": "",
+        "ototal": ""
+      }
+    }
+  }, "SOP Raise Capital": {
+    "sections": {
+    "department": "",
+    "purpose": "",
+    "frequency": "",
+    "procedure": {
+      "steps": [
+        {
+          "step_number": 1,
+          "description": ""
+        }
+      ]
+    }
+  }
+  }
+        },
+        "HR and People": {
+            "SOP": {
+    "Company Name": "",
+    "Address": "",
+    "Version": "",
+    "Date": "",
+    "Department": "",
+    "Version History": {
+      "No.": "",
+      "Current Date": "",
+      "Effective Date": "",
+      "Expiration Date": "",
+      "Responsible Person": "",
+      "Signature": "",
+      "Writer": "",
+      "Approval": ""
+    },
+    "Review Procedure": "",
+    "Purpose": "",
+    "Scope": "",
+    "Terms and Definition": "",
+    "Recruitment and Selection process": "",
+    "Onboarding": "",
+    "Transfers": "",
+    "Promotions": "",
+    "Training and Development": "",
+    "Leave": "",
+    "Separation": "",
+    "Workplace Safety": "",
+    "Responsibilities and Expectations of Employees": {
+      "Employee of Conduct": "",
+      "Discipline": "",
+      "Attendance and Time-off": "",
+      "Drug, Alcohol, and Tobacco Use and Testing Policies": "",
+      "Internet, Device, and BYOD Policies": "",
+      "Others": ""
+    },
+    "Signatures": ""
+  }, "Employee Performance Review": {
+    "employee_name": "",
+    "employee_id": "",
+    "position_held": "",
+    "department": "",
+    "reviewer": {
+      "name": "",
+      "title": ""
+    },
+    "dates": {
+      "current_review": "YYYY-MM-DD",
+      "last_review": "YYYY-MM-DD",
+      "submitted": "YYYY-MM-DD"
+    },
+  "scoring_legend": {
+    "1": "Needs Improvement",
+    "2": "Meets Expectations",
+    "3": "Exceeds Expectations",
+    "4": "Outstanding"
+  },
+  "performance_ratings": {
+    "quality_of_work": null,
+    "work_consistency": null,
+    "communication": null,
+    "independent_work": null,
+    "takes_initiative": null,
+    "collaboration_and_teamwork": null,
+    "productivity": null,
+    "creativity_and_innovation": null,
+    "problem_solving": null,
+    "adaptability_and_learning": null,
+    "integrity_and_ethics": null,
+    "client_and_customer_relations": null,
+    "technical_skills": null,
+    "dependability": null,
+    "attendance_and_punctuality": null,
+    "works_to_full_potential": null
+  },
+  "final_score": {
+    "total_points": 42,
+    "max_possible": 64
+  },
+  "qualitative_summary": {
+    "performance_summary": {
+      "strengths": "",
+      "areas_of_improvement": ""
+    },
+    "historical_goals": [
+      {
+        "goal_description1": "",
+        "status_achieved": false,
+        "notes": ""
+      }
+    ],
+    "future_goals": [
+      {
+        "goal_description2": "",
+        "action_steps": "",
+        "target_date": "YYYY-MM-DD"
+      }
+    ]
+  },
+  "approval": {
+    "manager_comments": "",
+    "employee_comments": "",
+    "approval_status": "Pending/Approved"
+  }}, "Employee Payroll Record": {
+    "employee_id": "",
+    "employee_name": "",
+    "department": ""
+    ,
+  "attendance_record": {
+    "days": {
+      "monday": 0.0,
+      "tuesday": 0.0,
+      "wednesday": 0.0,
+      "thursday": 0.0,
+      "friday": 0.0
+    },
+    "weekly_total_hours": 0.0
+  },
+  "pay_details": {
+    "rates": {
+      "base_hourly_rate": 0.00,
+      "overtime_rate": 0.00
+    },
+    "calculated_gross_pay": 0.00
+  },
+  "withholdings_and_deductions": {
+    "taxes": {
+      "state_income_tax": 0.00,
+      "federal_income_tax": 0.00
+    },
+    "other_deductions": 0.00,
+    "total_deductions": 0.00
+  },
+  "disbursement": {
+    "final_payment_net": 0.00,
+    "currency": "INR",
+    "payment_date": "YYYY-MM-DD"
+  }}, "Attendance Tracking Sheet":{
+  "employee_details": {
+    "employee_id": "",
+    "employee_name": ""
+  },
+  "attendance_log": {
+    "daily_hours": {
+      "monday": 0.0,
+      "tuesday": 0.0,
+      "wednesday": 0.0,
+      "thursday": 0.0,
+      "friday": 0.0,
+      "saturday": 0.0,
+      "sunday": 0.0
+    },
+    "total_hours": 0.0
+  },
+  "payroll_calculation": {
+    "hourly_rate": 0.00,
+    "currency": "USD",
+    "gross_pay": 0.00
+  },
+  "status": {
+    "is_approved": false,
+    "approval_date": "YYYY-MM-DD",
+    "manager_id": ""
+  }
+  }, "Employee Handbook": {
+  "document_info": {
+    "title": "Employee Handbook",
+    "version": "",
+    "last_updated": "2026-02-05",
+    "owner": "Head of People Ops / HR",
+    "approval_status": "Approved by Legal & CEO",
+    "applicability": "All Full-Time Employees (Global)"
+  },
+  "sections": [
+    {
+      "id": 1,
+      "category": "Welcome & Core Identity",
+      "subsections": {
+        "mission_statement": "Defining the problem solved for users.",
+        "vision_2030": "Five-year organizational goals.",
+        "core_values": ["Customer Obsession", "Default to Transparency", "Bias for Action"],
+        "product_history": "The 'Why' behind the product and founder story."
+      }
+    },
+    {
+      "id": 2,
+      "category": "Legal & Compliance Framework",
+      "subsections": {
+        "employment_at_will": "Standard US-based employment legal status.",
+        "eeo_statement": "Commitment to diversity and non-discrimination.",
+        "anti_harassment_policy": "Definitions and reporting procedures.",
+        "confidentiality_and_ip": "Ownership of code, data, and intellectual property.",
+        "data_privacy": "GDPR/CCPA employee responsibilities."
+      }
+    },
+    {
+      "id": 3,
+      "category": "Workplace & Behavioral Standards",
+      "subsections": {
+        "code_of_conduct": "Professionalism standards for Slack, Zoom, and in-person.",
+        "remote_hybrid_policy": "Core hours and availability expectations.",
+        "dress_code": "SaaS Casual guidelines.",
+        "attendance_punctuality": "Absence notification protocols.",
+        "equipment_use": "Acceptable use policy for laptops and software licenses."
+      }
+    },
+    {
+      "id": 4,
+      "category": "Compensation, Benefits & Perks",
+      "subsections": {
+        "pay_cycles": "Payroll frequency (Gusto/Rippling).",
+        "equity_stock_options": {
+          "vesting_schedule": "4-year total",
+          "cliff": "1-year"
+        },
+        "health_wellness": "Medical, Dental, and Vision summaries.",
+        "retirement": "401k/Pension matching details.",
+        "perks": ["Home office stipend", "Learning fund", "Gym membership"]
+      }
+    },
+    {
+      "id": 5,
+      "category": "Time Off & Work-Life Balance",
+      "subsections": {
+        "pto_policy": "Accrual vs. Unlimited PTO rules.",
+        "paid_holidays": "List of observed company holidays.",
+        "parental_leave": "Maternity, paternity, and adoption leave details.",
+        "sick_mental_health_leave": "Procedures for resting and recharging.",
+        "sabbatical_policy": "Extended leave eligibility after X years."
+      }
+    },
+    {
+      "id": 6,
+      "category": "Growth, Performance & Development",
+      "subsections": {
+        "performance_review": "360-degree feedback cycles.",
+        "internal_mobility": "Department transfer application process.",
+        "professional_development": "Reimbursement for courses and conferences.",
+        "promotion_framework": "Defined levels (e.g., Junior to Staff Engineer)."
+      }
+    },
+    {
+      "id": 7,
+      "category": "Offboarding & Transitions",
+      "subsections": {
+        "resignation": "Notice period requirements (2-4 weeks).",
+        "termination": "Dismissal grounds and Performance Improvement Plans (PIPs).",
+        "exit_interviews": "Feedback collection process.",
+        "property_return": "Checklist for hardware and security badges."
+      }
+    }
+  ]
+}, "Manager Evaluation": {
+  "document_type": "Manager Evaluation Form",
+  "administrative_header": {
+    "manager_name": "",
+    "evaluator_name": "",
+    "evaluation_period": "",
+    "department": ""
+  },
+  "quantitative_assessment": {
+    "scoring_scale": "1-5",
+    "categories": {
+      "leadership_and_vision": null,
+      "communication_and_transparency": null,
+      "decision_making_and_problem_solving": null,
+      "professional_development_and_coaching": null,
+      "emotional_intelligence_and_culture": null
+    }
+  },
+  "qualitative_assessment": {
+    "critical_strengths": {
+      "prompt1": "What are the top 2-3 things this manager does exceptionally well?",
+      "response1": ""
+    },
+    "areas_for_improvement": {
+      "prompt2": "What is one specific thing this manager could do differently to better support you or the team?",
+      "response2": ""
+    },
+    "barrier_analysis": {
+      "prompt3": "Is there anything currently within the manager's control that is preventing the team from reaching its full potential?",
+      "response3": ""
+    }
+  },
+  "closing_sign_off": {
+    "overall_rating": null,
+    "employee_signature_optional": "",
+    "date_of_submission": "YYYY-MM-DD"
+  }
+}, "Employee Records": {
+  "document_type": "Employee Record",
+  "personal_information": {
+    "first_name": "",
+    "last_name": "",
+    "date_of_birth": "YYYY-MM-DD",
+    "ssn": {
+      "value": "XXX-XX-XXXX",
+      "is_encrypted": true
+    },
+    "contact": {
+      "address": "",
+      "phone_number": "",
+      "email": ""
+    }
+  },
+  "employment_information": {
+    "employee_id": "EMP-XXXXX",
+    "job_title": "",
+    "department": "",
+    "date_of_hire": "YYYY-MM-DD",
+    "supervisor": {
+      "name": "",
+      "supervisor_id": ""
+    }
+  },
+  "metadata": {
+    "record_created_at": "YYYY-MM-DDTHH:MM:SSZ",
+    "last_modified": "YYYY-MM-DDTHH:MM:SSZ",
+    "status": "Active"
+  }
+}, "Employee Appraisal": {
+  "document_type": "Employee Appraisal Form",
+  "administrative_header": {
+    "date_of_review": "YYYY-MM-DD",
+    "employee_name": "",
+    "reviewer_name": "",
+    "review_period": ""
+  },
+  "performance_achievements": {
+    "accomplishments": [
+      {
+        "id": 1,
+        "description": "Key milestone, project, or KPI met."
+      }
+    ]
+  },
+  "competency_assessment": {
+    "key_strengths": [
+      {
+        "competency": "e.g., Technical Proficiency",
+        "notes": ""
+      }
+    ],
+    "teamwork_ability": {
+      "rating_summary": "",
+      "evidence": []
+    }
+  },
+  "development_areas": {
+    "problems_identified": [
+      {
+        "issue": "",
+        "impact": ""
+      }
+    ],
+    "improvement_plan": [
+      {
+        "area": "",
+        "actionable_step": "",
+        "target_date": "YYYY-MM-DD"
+      }
+    ]
+  },
+  "compliance_and_corrective_action": {
+    "warnings_disciplinary_actions": [
+      {
+        "type": "e.g., Verbal/Written",
+        "date_issued": "YYYY-MM-DD",
+        "details": ""
+      }
+    ]
+  },
+  "signatures": {
+    "employee_digital_signature": null,
+    "reviewer_digital_signature": null
+  }
+}
+        },
+        "Legal and Compliance": {
+            "Terms and Conditions": {
+  "document_type": "Terms and Conditions",
+  "metadata": {
+    "last_updated_date": "YYYY-MM-DD",
+    "company_info": "",
+    "company_country": "",
+    "service_name": "",
+    "service_url": ""
+  },
+  "definitions_and_interpretation": {
+    "defined_terms": {},
+    "interpretation_rules": ""
+  },
+  "acknowledgement_and_eligibility": {
+    "binding_agreement_clause": "",
+    "minimum_age_requirement": 18,
+    "privacy_policy_reference": ""
+  },
+  "user_account_management": {
+    "creation_requirements": "",
+    "password_security_obligations": "",
+    "unauthorized_use_procedure": "",
+    "username_restrictions": []
+  },
+  "content_governance": {
+    "user_content_rights": "",
+    "prohibited_content_list": [],
+    "company_moderation_rights": "",
+    "backup_disclaimer": ""
+  },
+  "intellectual_property": {
+    "platform_ownership_statement": "",
+    "dmca_notice_procedure": {
+      "agent_contact": "",
+      "required_info": []
+    },
+    "feedback_assignment_clause": ""
+  },
+  "liability_and_disclaimers": {
+    "limitation_of_liability": "",
+    "as_is_disclaimer": "",
+    "third_party_links_policy": ""
+  },
+  "legal_clauses": {
+    "termination_rights": "",
+    "governing_law_jurisdiction": "",
+    "dispute_resolution_process": "",
+    "severability_clause": ""
+  },
+  "contact_information": {
+    "contact_page_url": "",
+    "contact_email": ""
+  }
+}, "Terms of Use": {
+  "document_type": "Terms of Use",
+  "identification": {
+    "document_title": "Terms of Use",
+    "version": "",
+    "last_updated": "YYYY-MM-DD"
+  },
+  "definitions_and_interpretation": {
+    "interpretation_rules": "Standard rules for capitalized terms.",
+    "key_entities": {
+      "company": "[COMPANY_INFORMATION]",
+      "affiliate": "Entities with 50% or more ownership control.",
+      "user_reference": "You/User"
+    },
+    "asset_definitions": {
+      "website_url": "[WEBSITE_URL]",
+      "service": "The Website/Application platform.",
+      "account": "Unique user access credentials.",
+      "content": "Text, images, or data posted by users.",
+      "device": "Hardware used for access (Mobile/PC/Tablet)."
+    }
+  },
+  "compliance_and_eligibility": {
+    "acknowledgement_required": true,
+    "minimum_age": 18,
+    "privacy_policy_link": "[PRIVACY_POLICY_URL]"
+  },
+  "account_management": {
+    "information_accuracy_mandate": true,
+    "security_responsibility": "User-held password safeguarding.",
+    "username_standards": "Prohibits offensive or trademarked names."
+  },
+  "content_governance": {
+    "user_license_grant": "License granted to company to host/display content.",
+    "content_restrictions": [
+      "Unlawful",
+      "Offensive",
+      "Spam",
+      "Malware/Viruses"
+    ],
+    "company_authority": "Right to moderate, edit, or remove content.",
+    "backup_disclaimer": "Company is not liable for lost user data."
+  },
+  "intellectual_property": {
+    "company_property_rights": "Ownership of original site features/code.",
+    "copyright_infringement_policy": "DMCA notification procedure.",
+    "user_feedback_rights": "Assignment of suggestions/innovations to company."
+  },
+  "liability_and_disclaimers": {
+    "limitation_of_liability": "Capped at amount paid or 100 USD.",
+    "as_is_disclaimer": "Service provided without warranty of uptime or accuracy.",
+    "third_party_links": "No responsibility for external site practices."
+  },
+  "legal_provisions": {
+    "termination_conditions": "Right to suspend for breach of terms.",
+    "governing_law": "[COUNTRY/STATE]",
+    "dispute_resolution": "Informal resolution first requirement.",
+    "modification_policy": "30 days notice for material changes."
+  },
+  "contact_information": {
+    "support_channels": {
+      "website_contact_url": "[WEBSITE_CONTACT_PAGE_URL]",
+      "email": "[WEBSITE_CONTACT_EMAIL]"
+    }
+  }
+}, "Cookie Policy": {
+  "document_type": "Cookies Policy",
+  "identification": {
+    "document_title": "Cookies Policy",
+    "version_last_updated": "YYYY-MM-DD",
+    "generator_reference": "e.g., TermsFeed Cookies Policy Generator"
+  },
+  "general_provisions": {
+    "purpose_statement": "Explains what cookies are and how the Company uses them.",
+    "privacy_policy_relationship": "Links personal data stored in cookies to the main Privacy Policy.",
+    "sensitive_data_exclusion": "Explicit statement that passwords or addresses are NOT stored in cookies."
+  },
+  "definitions": {
+    "company": "[COMPANY_INFORMATION]",
+    "cookies": "Small files placed on your device to track browsing history.",
+    "website": {
+      "name": "[WEBSITE_NAME]",
+      "url": "[WEBSITE_URL]"
+    },
+    "user": "The individual accessing the website."
+  },
+  "categorization_of_cookies": {
+    "technical_types": {
+      "persistent_cookies": "Remain on device when offline.",
+      "session_cookies": "Deleted when browser is closed."
+    },
+    "functional_categories": {
+      "essential_cookies": "Necessary for authentication and security.",
+      "acceptance_cookies": "Identify if user has agreed to the cookie banner.",
+      "functionality_cookies": "Remember choices like login details or language.",
+      "tracking_performance_cookies": "Third-party cookies used for traffic analysis."
+    }
+  },
+  "user_consent_and_control": {
+    "opt_out_procedures": "Instructions for disabling cookies via browser settings.",
+    "disable_consequences": "Notice that some features may break if cookies are refused.",
+    "browser_specific_links": {
+      "chrome": "https://support.google.com/accounts/answer/32050",
+      "firefox": "https://support.mozilla.org/en-US/kb/delete-cookies",
+      "safari": "https://support.apple.com/guide/safari/manage-cookies",
+      "internet_explorer": "http://support.microsoft.com/kb/278835"
+    }
+  },
+  "contact_information": {
+    "website_contact_url": "[WEBSITE_CONTACT_PAGE_URL]",
+    "email": "[WEBSITE_CONTACT_EMAIL]"
+  }
+}, "End-User Licence Agreement": {
+  "document_type": "End-User License Agreement",
+  "identification": {
+    "document_title": "End-User License Agreement",
+    "last_updated_date": "YYYY-MM-DD"
+  },
+  "definitions_and_interpretation": {
+    "interpretation_rules": "Standard rules for capitalized terms.",
+    "key_definitions": {
+      "agreement": "The full contract between User and Company.",
+      "application": "[APP_NAME]",
+      "application_store": "Apple App Store or Google Play Store.",
+      "company": "[COMPANY_INFORMATION]",
+      "content": "User-generated text, images, or data.",
+      "device": "Hardware used to run the app."
+    }
+  },
+  "license_grant_and_scope": {
+    "license_type": "Revocable, non-exclusive, non-transferable, limited.",
+    "usage_scope": "Personal, non-commercial use on controlled devices.",
+    "store_rules_compliance": "Adherence to App Store/Play Store terms."
+  },
+  "license_restrictions": {
+    "prohibited_actions": [
+      "Selling, renting, or distributing the software",
+      "Reverse engineering or creating derivative works",
+      "Removing copyright or trademark notices"
+    ]
+  },
+  "intellectual_property": {
+    "ownership": "Company retains all rights to original features and code.",
+    "feedback_policy": "User suggestions are assigned/licensed to the Company."
+  },
+  "maintenance_and_support": {
+    "service_level": "No obligation for support unless required by law."
+  },
+  "disclaimers_and_liability": {
+    "as_is_basis": "No warranty for compatibility or error-free operation.",
+    "limitation_of_liability": "Capped at amount paid or 100 USD.",
+    "indemnification": "User holds company harmless from claims arising from breach."
+  },
+  "term_and_termination": {
+    "effective_period": "Active until terminated by either party.",
+    "termination_rights": "Immediate suspension for breach of terms.",
+    "effect_of_termination": "Cease all use and delete all copies of the app."
+  },
+  "legal_and_compliance": {
+    "us_compliance": "Not on a prohibited/restricted party list.",
+    "governing_law": "[COUNTRY/STATE]",
+    "severability_and_waiver": "Invalid provisions do not affect the whole."
+  },
+  "contact_information": {
+    "contact_methods": {
+      "website_url": "[WEBSITE_CONTACT_PAGE_URL]",
+      "email": "[WEBSITE_CONTACT_EMAIL]"
+    }
+  }
+}, "Privacy Policy": {
+  "document_type": "Privacy Policy",
+  "metadata": {
+    "document_title": "Privacy Policy",
+    "last_updated_date": "YYYY-MM-DD",
+    "purpose": "Describes policies on collection, use, and disclosure of user information."
+  },
+  "definitions_and_interpretation": {
+    "interpretation": "Rules for capitalized terms.",
+    "key_definitions": {
+      "account": "Unique access profile for the Service.",
+      "company": "[COMPANY_INFORMATION]",
+      "personal_data": "Information relating to an identified or identifiable individual.",
+      "service": "The Website/Application.",
+      "service_provider": "Third-parties processing data on behalf of the Company.",
+      "usage_data": "Data collected automatically (IP, browser type, etc.)."
+    }
+  },
+  "data_collection_and_usage": {
+    "types_of_data": {
+      "personal_data": ["Email", "First Name", "Last Name", "Phone Number"],
+      "usage_data": ["IP Address", "Browser Type", "Time on Pages", "Device IDs"],
+      "tracking_technologies": "Cookies and Web Beacons usage details."
+    },
+    "data_use_purposes": [
+      "Service maintenance and provision",
+      "Account management",
+      "Contract performance",
+      "Marketing and updates",
+      "Business transfers and analytics"
+    ]
+  },
+  "data_sharing_and_disclosure": {
+    "sharing_recipients": [
+      "Service Providers",
+      "Affiliates",
+      "Business Partners"
+    ],
+    "business_transfers": "Data transfer during mergers or asset sales.",
+    "legal_disclosure": "Response to public authorities or legal requirements."
+  },
+  "retention_and_transfer": {
+    "retention_policy": "Data kept only as long as necessary for defined purposes.",
+    "data_transfer": "Processing locations and cross-border transfer notices."
+  },
+  "rights_and_security": {
+    "security_disclosure": "Commercially acceptable protection measures disclaimer.",
+    "childrens_privacy": "Policy for users under 13 (or local age of consent).",
+    "regional_specifics": {
+      "california_rights": "CCPA/Shine the Light specific disclosures."
+    }
+  },
+  "external_factors": {
+    "third_party_links": "Non-responsibility for external site privacy practices.",
+    "policy_updates": "Notification procedure for material changes."
+  },
+  "contact_information": {
+    "contact_methods": {
+      "website_url": "[WEBSITE_CONTACT_PAGE_URL]",
+      "email": "[WEBSITE_CONTACT_EMAIL]"
+    }
+  }
+}
+        },
+        "Marketing and Content": {
+            "Marketing Plan": {
+  "document_type": "Marketing Campaign Plan",
+  "strategic_overview": {
+    "marketing_smart_goal": "Specific, Measurable, Achievable, Relevant, and Time-bound goal.",
+    "target_audience": {
+      "demographics": "",
+      "psychographics": "",
+      "pain_points": []
+    },
+    "strategy_and_objectives": "High-level approach and key milestones."
+  },
+  "financials": {
+    "total_budget": 0.00,
+    "currency": "USD",
+    "budget_allocation": [
+      {
+        "category": "e.g., Content Creation",
+        "amount": 0.00
+      }
+    ]
+  },
+  "execution_channels": {
+    "marketing_channels": [
+      "Social Media",
+      "Email Marketing",
+      "Search Engine Ads (SEM)",
+      "SEO / Blog",
+      "Influencer Outreach"
+    ]
+  },
+  "success_measurement": {
+    "kpis": [
+      {
+        "metric1": "e.g., Customer Acquisition Cost (CAC)",
+        "target1": ""
+      },
+      {
+        "metric2": "e.g., Conversion Rate",
+        "target2": ""
+      }
+    ]
+  },
+  "detailed_action_plan": [
+    {
+      "action_step": "",
+      "description": "",
+      "owner": "",
+      "due_date": "YYYY-MM-DD",
+      "resources": [],
+      "estimated_cost": 0.00
+    }
+  ]
+}, "SOP": {
+  "document_type": "Standard Operating Procedure",
+  "header": {
+    "department": "",
+    "effective_date": "YYYY-MM-DD",
+    "author": ""
+  },
+  "version_control": [
+    {
+      "version": "1.0",
+      "approved_by": "",
+      "approval_date": "YYYY-MM-DD",
+      "description_of_change": "Initial Document Creation"
+    }
+  ],
+  "overview": {
+    "purpose": "The objective and intended outcome of this procedure.",
+    "scope": "The specific team, process, or software this SOP applies to.",
+    "keywords_and_definitions": [
+      {
+        "term": "",
+        "definition": ""
+      }
+    ]
+  },
+  "execution": {
+    "procedure_steps": [
+      {
+        "step_number": 1,
+        "action": "",
+        "notes": "Optional details or warnings."
+      }
+    ],
+    "resources": [
+      "Links to software, templates, or physical equipment needed."
+    ]
+  },
+  "metadata": {
+    "status": "Active/Archived/Draft",
+    "next_review_date": "YYYY-MM-DD"
+  }
+}, "Marketing Report": {
+  "document_type": "Executive Performance Report",
+  "administrative_header": {
+    "company_details": {
+      "name": "",
+      "address": "",
+      "phone": "",
+      "email": ""
+    },
+    "governance": {
+      "prepared_by": "",
+      "preparation_date": "YYYY-MM-DD",
+      "approved_by": "",
+      "approval_date": "YYYY-MM-DD"
+    }
+  },
+  "executive_summary": "High-level narrative of the reporting period's success and challenges.",
+  "operational_performance": {
+    "total_projects_delivered": 0,
+    "key_performance_indicators": [
+      {
+        "metric_name": "",
+        "value": "",
+        "target": "",
+        "status": "On Track/At Risk/Behind"
+      }
+    ]
+  },
+  "marketing_and_financial_overview": {
+    "marketing": {
+      "leads_generated": 0,
+      "conversion_rate": "0.00%",
+      "customer_acquisition_cost": 0.00
+    },
+    "financials": {
+      "total_revenue": 0.00,
+      "net_profit": 0.00,
+      "burn_rate": 0.00,
+      "currency": "USD"
+    }
+  },
+  "conclusion": {
+    "summary_notes": "",
+    "next_steps": []
+  }
+}, "Marketing SWOT Analysis": {
+  "document_type": "SWOT Analysis",
+  "metadata": {
+    "organization_name": "",
+    "department": "",
+    "analysis_date": "YYYY-MM-DD",
+    "analyst_name": "",
+    "scope": "e.g., Product Launch, Annual Strategy, Competitor Comparison"
+  },
+  "internal_factors": {
+    "strengths": [
+      {
+        "factor1": "e.g., High brand recognition",
+        "description1": "Positive internal attributes that provide an advantage.",
+        "priority1": "High/Medium/Low"
+      }
+    ],
+    "weaknesses": [
+      {
+        "factor2": "e.g., Limited R&D budget",
+        "description2": "Internal factors that place the entity at a disadvantage.",
+        "priority2": "High/Medium/Low"
+      }
+    ]
+  },
+  "external_factors": {
+    "opportunities": [
+      {
+        "factor3": "e.g., Emerging market in SE Asia",
+        "description3": "External chances to improve performance.",
+        "potential_impact": "Scale of 1-10"
+      }
+    ],
+    "threats": [
+      {
+        "factor4": "e.g., Increasing regulatory scrutiny",
+        "description4": "External elements that could cause trouble.",
+        "risk_level": "Critical/Moderate/Low"
+      }
+    ]
+  },
+  "strategic_recommendations": {
+    "summary": "",
+    "action_items": []
+  }
+}, "Marketing Campaign Evaluation": {
+  "document_type": "Campaign Performance Analysis",
+  "sales_figures": {
+    "growth_metrics": {
+      "pre_campaign_baseline": 0.0,
+      "post_campaign_total": 0.0,
+      "percentage_growth": 0.0
+    },
+    "performance_status": {
+      "expectation_category": "Did not meet / Met / Exceeded",
+      "actual_vs_target_percentage": 0.0
+    },
+    "revenue_attribution": {
+      "primary_increase_source": "",
+      "secondary_contributing_factors": []
+    }
+  },
+  "marketing_strategic_review": {
+    "goal_reexamination": {
+      "original_goal": "",
+      "goal_validity_status": "Retain / Modify / Pivot",
+      "narrative": ""
+    },
+    "market_penetration": {
+      "market_capture_status": "Grabbing market / Static / Losing share",
+      "most_profitable_segment": "",
+      "market_share_increase_percentage": 0.0
+    }
+  },
+  "content_and_creative_audit": {
+    "ad_communication": "What the ads actually communicated to the audience.",
+    "purpose_fulfillment": {
+      "fulfilled": true,
+      "gap_analysis": ""
+    },
+    "target_market_alignment": {
+      "perceived_understanding_level": "High/Medium/Low",
+      "audience_feedback_summary": ""
+    }
+  }
+}, "Marketing Campaign Brief": {
+  "document_type": "Marketing Campaign Brief",
+  "header": {
+    "campaign_title": "",
+    "campaign_duration": {
+      "start_date": "YYYY-MM-DD",
+      "end_date": "YYYY-MM-DD"
+    },
+    "objectives": []
+  },
+  "audience_profile": {
+    "demographics": {
+      "age_range": "",
+      "location": "",
+      "job_titles": []
+    },
+    "psychographics": {
+      "interests": [],
+      "pain_points": [],
+      "motivations": ""
+    },
+    "segment_specifics": ""
+  },
+  "creative_strategy": {
+    "key_message": "The one thing the audience should remember.",
+    "design_elements": {
+      "visual_style": "",
+      "color_palette": [],
+      "assets_required": []
+    },
+    "tone_and_voice": "e.g., Professional yet witty, Authoritative, or High-energy."
+  },
+  "execution": {
+    "channels_and_mediums": [
+      "LinkedIn Ads",
+      "Email Newsletter",
+      "Podcast Sponsorship"
+    ],
+    "budget_allocation": {
+      "total_budget": 0.00,
+      "currency": "USD"
+    }
+  },
+  "measurement": {
+    "kpis_and_metrics": [
+      {
+        "metric": "Click-Through Rate (CTR)",
+        "target_value": "0.0%"
+      }
+    ]
+  }
+}, "Marketing Budget": {
+  "sections": {
+    "budget_allocation": "",
+    "actual_spending": "",
+    "budget_variance": "",
+    "instructions": ""
+  }
+}
+        },
+        "Project Management": {
+            "Project Plan": {
+  "document_type": "Project Management Plan",
+  "header": {
+    "company_details": {
+      "name": "",
+      "address": "",
+      "email": ""
+    },
+    "governance": {
+      "prepared_by": "",
+      "approved_by": "",
+      "reviewed_by": "",
+      "date": "YYYY-MM-DD"
+    }
+  },
+  "project_overview": {
+    "executive_summary": "",
+    "project_scope": "",
+    "objectives_and_goals": []
+  },
+  "timeline_and_execution": {
+    "phases": [
+      {
+        "phase_name": "",
+        "key_milestones": [],
+        "estimated_completion": "YYYY-MM-DD"
+      }
+    ],
+    "work_distribution": [
+      {
+        "role": "",
+        "responsibilities": "",
+        "team_leader": ""
+      }
+    ]
+  },
+  "financial_management": {
+    "cost_baseline": {
+      "categories": [
+        {
+          "category": "e.g., Infrastructure",
+          "allocated": 0.00
+        }
+      ],
+      "total_estimated": 0.00
+    },
+    "cost_control_plan": {
+      "monitoring_frequency": "",
+      "variance_management_threshold": "e.g., 10%",
+      "milestone_review_schedule": ""
+    }
+  },
+  "risk_and_communication": {
+    "risk_management": [
+      {
+        "risk": "",
+        "impact": "High/Medium/Low",
+        "likelihood": "High/Medium/Low",
+        "mitigation_plan": ""
+      }
+    ],
+    "communication_plan": "Protocol for internal and external stakeholders."
+  },
+  "evaluation": {
+    "success_metrics": [
+      {
+        "kpi": "",
+        "target_value": ""
+      }
+    ]
+  }
+}, "Agile Retrospective": {
+  "document_type": "Sprint Retrospective",
+  "metadata": {
+    "project_name": "",
+    "sprint_id": "",
+    "date": "2026-02-09",
+    "facilitator": "",
+    "participants": []
+  },
+  "retrospective_data": {
+    "what_went_well": [
+      {
+        "category": "e.g., Process, Tools, Teamwork",
+        "observation": "",
+        "votes": 0
+      }
+    ],
+    "what_could_be_improved": [
+      {
+        "issue": "",
+        "root_cause_hint": "",
+        "impact_level": "High/Medium/Low"
+      }
+    ],
+    "action_items_next_steps": [
+      {
+        "experiment": "What will we try next?",
+        "owner": "",
+        "success_criteria": ""
+      }
+    ],
+    "unresolved_questions": [
+      {
+        "question": "",
+        "assigned_to": "",
+        "deadline": "YYYY-MM-DD"
+      }
+    ]
+  }
+}, "Project Report": {
+  "document_type": "Project Status Report",
+  "header": {
+    "project_name": "",
+    "project_manager": "",
+    "time_period": "e.g., Week 6, 2026",
+    "progress_score": null,
+    "prepared_by": "",
+    "authorised_by": "",
+    "submission_date": "2026-02-09"
+  },
+  "executive_brief": {
+    "critical_issues": [],
+    "project_notes": ""
+  },
+  "activity_tracking": {
+    "completed_activities": [
+      {
+        "description1": "",
+        "tasks1": [],
+        "team_members1": [],
+        "completion_date1": "YYYY-MM-DD",
+        "notes1": ""
+      }
+    ],
+    "activities_in_progress": [
+      {
+        "description2": "",
+        "tasks2": [],
+        "team_members2": [],
+        "estimated_completion2": "YYYY-MM-DD",
+        "notes2": ""
+      }
+    ]
+  }
+}, "Project Proposal": {
+  "document_type": "Project Proposal",
+  "metadata": {
+    "project_title": "",
+    "submitted_by": "",
+    "submitted_to": "",
+    "date_submitted": "2026-02-09",
+    "projected_start_date": "YYYY-MM-DD"
+  },
+  "governance_and_stakeholders": {
+    "project_sponsor": "",
+    "funding_sponsor": "",
+    "project_owner": "",
+    "proposal_facilitator": "",
+    "additional_stakeholders": [
+      {
+        "name": "",
+        "role": ""
+      }
+    ]
+  },
+  "strategic_definition": {
+    "description": "",
+    "purpose_goals": [],
+    "assumptions": [],
+    "measurements_of_success": [],
+    "risk_factors": []
+  },
+  "approach_and_scope": {
+    "methodology": "e.g., Agile, Waterfall, Hybrid",
+    "functions_impacted": {
+      "in_scope1": [],
+      "out_of_scope1": [],
+      "uncertain1": []
+    },
+    "interdependencies_replacement": {
+      "in_scope2": [],
+      "out_of_scope2": [],
+      "uncertain2": []
+    }
+  },
+  "timeline_and_budget": {
+    "milestones": [
+      {
+        "milestone": "",
+        "deadline": "YYYY-MM-DD"
+      }
+    ],
+    "resource_estimate": {
+      "items": [
+        {
+          "need": "e.g., Cloud Infrastructure",
+          "cost": 0.00
+        }
+      ],
+      "total_estimated_cost": 0.00
+    }
+  }
+}, "Project Timeline": {
+  "document_type": "Task Entry",
+  "task_identification": {
+    "task_name": "",
+    "sub_tasks": [],
+    "priority": "Critical/High/Medium/Low"
+  },
+  "assignment_details": {
+    "assigned_to": "",
+    "status": "Backlog/In Progress/Review/Done"
+  },
+  "scheduling": {
+    "start_date": "2026-02-09",
+    "end_date": "YYYY-MM-DD",
+    "duration_days": 0
+  },
+  "feedback": {
+    "comments": [
+      {
+        "author": "",
+        "timestamp": "YYYY-MM-DDTHH:MM:SSZ",
+        "text": ""
+      }
+    ]
+  }
+}, "Multiple Project Tracking": {
+  "document_type": "Project Financial Ledger",
+  "project_identification": {
+    "project_name": "Project 1",
+    "description": "",
+    "status": "Active/Complete/On-Hold"
+  },
+  "timeline_variance": {
+    "start_date_planned": "2026-02-09",
+    "start_date_actual": "YYYY-MM-DD",
+    "end_date": "YYYY-MM-DD"
+  },
+  "labour_costs": {
+    "hours": 0.0,
+    "rate_per_hour": 0.0,
+    "total_labour": 0.0
+  },
+  "overhead_costs": {
+    "travel": 0.0,
+    "space": 0.0,
+    "fixed_costs": 0.0,
+    "miscellaneous": 0.0,
+    "total_other": 0.0
+  },
+  "financial_summary": {
+    "budget_allocated": 0.0,
+    "actual_spend": 0.0,
+    "balance": 0.0
+  }
+}, "Project Brief": {
+  "document_type": "Project Blueprint",
+  "general_info": {
+    "project_name": "",
+    "project_type": "e.g., SaaS, Hardware, Internal Tool"
+  },
+  "market_positioning": {
+    "target_audience": [],
+    "unique_selling_proposition": "The core reason why this project is better than alternatives.",
+    "competitive_analysis": "Summary of market rivals and our edge."
+  },
+  "product_definition": {
+    "description": "",
+    "key_features": [],
+    "customer_benefits": []
+  },
+  "technical_and_commercial": {
+    "technical_specifications": {
+      "stack": [],
+      "infrastructure_requirements": ""
+    },
+    "pricing_strategy": {
+      "model": "e.g., Subscription, Freemium, One-time",
+      "price_points": {}
+    }
+  },
+  "go_to_market": {
+    "distribution_channels": [],
+    "marketing_and_promotion": [
+      "SEO",
+      "Social Media",
+      "Direct Sales"
+    ]
+  }
+}
+        },
+        "Quality Assurance": {
+            "Quality Assurance Policy": {
+  "document_type": "Policy",
+  "metadata": {
+    "policy_name": "e.g., Quality Assurance Policy",
+    "effective_date": "2026-02-09",
+    "last_reviewed": "YYYY-MM-DD"
+  },
+  "core_philosophy": {
+    "statement_of_intent": "A high-level declaration of the organization's values.",
+    "purpose": "The specific reason this policy exists (e.g., Carbon Neutrality by 2030)."
+  },
+  "governance": {
+    "responsibilities": [
+      {
+        "role": "e.g., Operations Manager",
+        "duty": "Overseeing waste reduction protocols."
+      }
+    ]
+  },
+  "strategic_framework": {
+    "policy_aims": [
+      "Objective 1: Reduce paper waste by 50%.",
+      "Objective 2: Transition to 100% renewable energy."
+    ],
+    "strategies_and_actions": [
+      {
+        "goal": "Energy Efficiency",
+        "action_step": "Install smart thermostats in all office locations.",
+        "timeline": "Q3 2026"
+      }
+    ]
+  },
+  "accountability": {
+    "monitoring_procedures": "How progress is measured (e.g., monthly utility audits).",
+    "reporting_frequency": "Quarterly/Annual"
+  }
+}, "Audit Checklist": {
+  "document_type": "Audit Checklist",
+  "metadata": {
+    "audit_title": "",
+    "auditor_name": "",
+    "audit_date": "2026-02-09",
+    "department_under_review": ""
+  },
+  "audit_findings": [
+    {
+      "ref_no": "e.g., SEC-001",
+      "audit_question": "Is multi-factor authentication enabled for all administrative accounts?",
+      "evaluation": {
+        "score": 0,
+        "meets_standard": true,
+        "severity": "None / Minor Concern / Major Concern"
+      },
+      "qualitative_data": {
+        "opportunities_for_improvement": "",
+        "notes": "",
+        "recommendations": "Implement hardware security keys for high-risk users."
+      }
+    }
+  ],
+  "summary_metrics": {
+    "total_score": 0,
+    "compliance_percentage": "0%",
+    "major_concerns_count": 0
+  }
+}, "Quality Control Checklist": {
+  "document_type": "Quality Control Checklist",
+  "project_identification": {
+    "project_name": "",
+    "inspection_date": "2026-02-09",
+    "inspector_name": ""
+  },
+  "general_compliance": {
+    "identity_verified": false,
+    "budget_adherence": false,
+    "schedule_adherence": false,
+    "regulatory_standards_met": false
+  },
+  "inventory_and_supply": {
+    "material_quality_check": "Pass/Fail/NA",
+    "storage_conditions_met": "Pass/Fail/NA",
+    "inventory_levels_sufficient": "Pass/Fail/NA"
+  },
+  "operational_integrity": {
+    "sop_adherence": false,
+    "worker_qualification_verified": false,
+    "safety_protocols_followed": false
+  },
+  "functional_validation": {
+    "core_functions_performance": "Scale 1-5",
+    "feature_consistency": "Pass/Fail",
+    "output_reliability": "Description of consistency"
+  },
+  "approval_status": {
+    "passed": false,
+    "rejection_reason": "",
+    "required_reworks": []
+  }
+}
+        },
+        "Safety and Security": {
+            "HR Incident Report": {
+  "document_type": "HR Incident Report",
+  "administrative_metadata": {
+    "incident_no": "e.g., INC-2026-001",
+    "reported_by": "",
+    "reporter_title": "",
+    "date_of_report": "2026-02-09"
+  },
+  "incident_details": {
+    "employee_involved": {
+      "name": "",
+      "role": ""
+    },
+    "event_context": {
+      "date_of_incident": "YYYY-MM-DD",
+      "location": "",
+      "witnesses": [],
+      "additional_persons": []
+    },
+    "narrative": {
+      "before": "Preceding events and context.",
+      "during": "Detailed account of the incident.",
+      "after": "Immediate aftermath and reactions.",
+      "employee_explanation": "The involved employee's formal statement."
+    }
+  },
+  "resolution": {
+    "resulting_action": "e.g., Verbal warning, Suspension, Training required.",
+    "signatories": {
+      "employee": "",
+      "reporting_staff": "",
+      "hr_representative": ""
+    }
+  }
+}, "Cyber Security Incident Report": {
+  "document_type": "Cyber Security Incident Report",
+  "incident_metadata": {
+    "incident_id": "CYBER-2026-XXXX",
+    "date_of_incident": "2026-02-09",
+    "incident_ongoing": false
+  },
+  "reporter_info": {
+    "full_name": "",
+    "job_role": "",
+    "Department": "",
+    "Contact": {
+      "Email": "",
+      "Phone": ""
+    }
+  },
+  "incident_discovery": {
+    "timestamp_discovered": "YYYY-MM-DDTHH:MM:SSZ",
+    "method_of_detection": "e.g., IDS Alert, User Report, Manual Audit",
+    "narrative_description": "When, where, and how it occurred."
+  },
+  "scope_and_impact": {
+    "compromised_assets": {
+      "files": [],
+      "accounts": [],
+      "systems": []
+    },
+    "impacted_services": [],
+    "affected_user_count": 0,
+    "data_loss_confirmed": false
+  },
+  "response_log": {
+    "notifications": {
+      "supervisor_notified": {"status1": false, "timestamp1": ""},
+      "it_security_notified": {"status2": false, "timestamp2": ""}
+    },
+    "containment_measures": "Immediate actions taken to isolate the threat."
+  }
+}, "Information Security Incident Report": {
+  "document_type": "Technical Infosec Incident Report",
+  "report_metadata": {
+    "incident_no": "INF-2026-XXXX",
+    "reported_by": "",
+    "date_of_report": "2026-02-09",
+    "reporter_title_role": ""
+  },
+  "incident_command": {
+    "incident_manager": "",
+    "manager_role": "",
+    "contact": {
+      "phone": "",
+      "email": ""
+    }
+  },
+  "event_context": {
+    "timestamp": "2026-02-09T00:00:00Z",
+    "location": ""
+  },
+  "technical_inventory": {
+    "incident_type": "",
+    "affected_hosts_count": 0,
+    "network_details": {
+      "source_ip": "",
+      "target_ip": ""
+    },
+    "system_specs": {
+      "host_name": "",
+      "operating_system": "",
+      "applications_involved": []
+    }
+  },
+  "narrative_and_impact": {
+    "description": "",
+    "impact_assessment": "",
+    "resulting_damage": ""
+  },
+  "remediation": {
+    "immediate_actions": [],
+    "preventative_measures_planned": []
+  },
+  "information_sharing_log": [
+    {
+      "department": "",
+      "poc_name": "",
+      "notification_date": "YYYY-MM-DD"
+    }
+  ],
+  "signatures": {
+    "reporting_staff": "",
+    "supervisor": "",
+    "date": "2026-02-09"
+  }
+}, "Offence Incident Report": {
+  "document_type": "Offence Incident Report",
+  "metadata": {
+    "incident_no": "OFF-2026-XXXX",
+    "reported_by": "",
+    "reporter_role": "",
+    "date_of_report": "2026-02-09"
+  },
+  "event_details": {
+    "offence_type": "e.g., Theft, Vandalism, Trespassing",
+    "timestamp": "2026-02-09T00:00:00Z",
+    "location": "",
+    "description_narrative": "A detailed account of the event."
+  },
+  "subjects_and_evidence": {
+    "persons_involved": [
+      { "name1": "", "role1": "e.g., Suspect, Victim, Harasser" }
+    ],
+    "witnesses": [
+      { "name2": "", "role2": "" }
+    ],
+    "vehicle_info": {
+      "make_model": "",
+      "license_plate": "",
+      "color_features": ""
+    },
+    "property_info": {
+      "item_description": "",
+      "estimated_value": 0.00,
+      "damage_status": ""
+    }
+  },
+  "resolution": {
+    "follow_up_action": "e.g., Police notified, Security footage archived.",
+    "supervisor_name": "",
+    "final_signoff_date": "2026-02-09"
+  }
+}
+        },
+        "Sales and Customers": {
+            "SOP": {
+  "document_type": "Standard Operating Procedure",
+  "header": {
+    "title": "Sales Lifecycle Management",
+    "sop_no": "SOP-SALES-001",
+    "department": "Sales & Business Development",
+    "version": "1.0.0",
+    "effective_date": "2026-02-09",
+    "prepared_by": ""
+  },
+  "revision_history": [
+    {
+      "version": "1.0.0",
+      "date1": "2026-02-09",
+      "change_description": "Initial creation of standardized sales flow.",
+      "author": "",
+      "approver": ""
+    }
+  ],
+  "policy_framework": {
+    "purpose": "To standardize the sales process and ensure seamless customer transitions.",
+    "scope": "Applies to all B2B and Enterprise sales activities.",
+    "roles_and_responsibilities": [
+      {
+        "role1": "SDR",
+        "responsibility": "Lead qualification and initial outreach."
+      }
+    ],
+    "tools_and_systems": [
+      "Salesforce CRM",
+      "LinkedIn Sales Navigator",
+      "ZoomInfo"
+    ]
+  },
+  "procedure_stages": {
+    "lead_management": "Inbound/Outbound qualification criteria.",
+    "sales_call_discovery": "Standardized discovery questions and pain point mapping.",
+    "proposal_quoting": "Pricing approval workflow and contract generation.",
+    "closing": "Negotiation parameters and legal sign-off.",
+    "post_sale_handoff": "Transfer of account data to Customer Success (CS)."
+  },
+  "governance": {
+    "documentation_requirements": "All calls must be logged in CRM with notes.",
+    "sign_off": {
+      "name": "",
+      "role2": "",
+      "date2": "2026-02-09"
+    }
+  }
+}, "Customer List": {
+  "document_type": "Customer Record",
+  "customer_identity": {
+    "customer_id": "CUST-XXXXX",
+    "company_name": "",
+    "industry": "e.g., Fintech, Healthcare, Manufacturing"
+  },
+  "primary_contact": {
+    "name": "",
+    "title": "",
+    "phone": "",
+    "email": ""
+  },
+  "logistics": {
+    "mailing_address": {
+      "street": "",
+      "city": "",
+      "state": "",
+      "postal_code": "",
+      "country": ""
+    },
+    "billing_address_same_as_mailing": true,
+    "billing_address": {}
+  },
+  "crm_metadata": {
+    "account_status": "Lead/Active/Churned",
+    "notes": "Internal history and relationship context.",
+    "created_at": "2026-02-09T15:42:07Z"
+  }
+}, "Sales Invoice": {
+  "document_type": "Sales Invoice",
+  "header": {
+    "invoice_no": "INV-2026-XXXX",
+    "date": "2026-02-09",
+    "company_info": {
+      "name": "Your Company Name",
+      "address": "Your Business Address",
+      "poc": "Accounts Receivable Dept"
+    }
+  },
+  "customer_metadata": {
+    "customer_no": "CUST-XXXXX",
+    "billing_address": ""
+  },
+  "line_items": [
+    {
+      "item_no": "",
+      "description": "",
+      "quantity": 0,
+      "unit_price": 0.00,
+      "line_total": 0.00
+    }
+  ],
+  "financial_summary": {
+    "sub_total": 0.00,
+    "tax_rate_percent": 0.0,
+    "tax_amount": 0.00,
+    "shipping_fees": 0.00,
+    "other_charges": 0.00,
+    "grand_total": 0.00
+  }
+}, "Potential Client Tracker": {
+  "document_type": "Lead Tracker",
+  "client_info": {
+    "company_name": "",
+    "contact_name": "",
+    "email": "",
+    "phone": "",
+    "location": {
+      "address": "",
+      "city": "",
+      "state": "",
+      "zip": ""
+    }
+  },
+  "deal_metrics": {
+    "sales_rep": "",
+    "deal_size": 0.00,
+    "probability_percent": 0.0,
+    "weighted_forecast": 0.00,
+    "deal_status": "Discovery/Proposal/Negotiation/Closing"
+  },
+  "engagement_timeline": {
+    "projected_closing_date": "YYYY-MM-DD",
+    "last_contact_date": "2026-02-09",
+    "next_contact_date": "YYYY-MM-DD",
+    "next_action": ""
+  },
+  "qualitative_data": {
+    "notes": ""
+  }
+}, "Statement of Work": {
+  "sections": {
+    "company_name": "",
+    "client_name": "",
+    "project_name": "",
+    "project_manager": "",
+    "start_date": "",
+    "end_date": "",
+    "scope_of_work": "",
+    "project_objectives": ""
+  }
+}, "Customer Feedback Form": {
+  "metadata": {
+    "form_name": "Customer Feedback Form",
+    "submission_date": "",
+    "response_id": ""
+  },
+  "customer_information": {
+    "first_name": "",
+    "last_name": "",
+    "address": "",
+    "email_address": "",
+    "phone_number": "",
+    "company_name": "",
+    "job_title": ""
+  },
+  "feedback": {
+    "product_or_service": "",
+    "overall_satisfaction_rating": {
+      "rating_scale": "1-5",
+      "rating_value": 0
+    },
+    "would_use_in_future": false,
+    "improvement_suggestions": "",
+    "additional_comments": ""
+  },
+  "internal_review": {
+    "reviewed_by": "",
+    "follow_up_required": false,
+    "follow_up_notes": ""
+  }
+}, "Work Order Form": {
+  "metadata": {
+    "document_type": "Work Order Form",
+    "status": "Pending",
+    "created_date": "",
+    "approved_by": ""
+  },
+  "work_order_information": {
+    "company_name": "",
+    "work_order_number": "",
+    "date_issued": ""
+  },
+  "request_details": {
+    "requested_by": {
+      "name": "",
+      "department_or_unit": "",
+      "contact_information": ""
+    },
+    "work_location": ""
+  },
+  "work_details": {
+    "detailed_description": "",
+    "type_of_work": "",
+    "priority_level": {
+      "level": "",
+      "allowed_values": ["Low", "Medium", "High", "Critical"]
+    },
+    "preferred_completion_date": "",
+    "special_instructions_or_requirements": ""
+  },
+  "tracking": {
+    "assigned_to": "",
+    "start_date": "",
+    "completion_date": "",
+    "current_status": ""
+  }
+}
+        }
+    } }
