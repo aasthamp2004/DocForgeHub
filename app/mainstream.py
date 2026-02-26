@@ -52,7 +52,6 @@ def render_field(key, value, path=""):
             selected_date = st.date_input(key)
             return selected_date.isoformat() if selected_date else ""
 
-
         return st.text_input(key)
 
     # -----------------------------
@@ -169,7 +168,6 @@ def render_field(key, value, path=""):
         return obj
 
     return None
-
 
 # =====================================================
 # CAPTURE USER INPUT

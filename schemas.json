@@ -730,9 +730,9 @@
   },
   "sections": [
     {
-      "id": 1,
-      "category": "Welcome & Core Identity",
-      "subsections": {
+      "id1": 1,
+      "category1": "Welcome & Core Identity",
+      "subsections1": {
         "mission_statement": "Defining the problem solved for users.",
         "vision_2030": "Five-year organizational goals.",
         "core_values": ["Customer Obsession", "Default to Transparency", "Bias for Action"],
@@ -740,9 +740,9 @@
       }
     },
     {
-      "id": 2,
-      "category": "Legal & Compliance Framework",
-      "subsections": {
+      "id2": 2,
+      "category2": "Legal & Compliance Framework",
+      "subsections2": {
         "employment_at_will": "Standard US-based employment legal status.",
         "eeo_statement": "Commitment to diversity and non-discrimination.",
         "anti_harassment_policy": "Definitions and reporting procedures.",
@@ -751,8 +751,8 @@
       }
     },
     {
-      "id": 3,
-      "category": "Workplace & Behavioral Standards",
+      "id3": 3,
+      "category3": "Workplace & Behavioral Standards",
       "subsections": {
         "code_of_conduct": "Professionalism standards for Slack, Zoom, and in-person.",
         "remote_hybrid_policy": "Core hours and availability expectations.",
@@ -762,9 +762,9 @@
       }
     },
     {
-      "id": 4,
-      "category": "Compensation, Benefits & Perks",
-      "subsections": {
+      "id4": 4,
+      "category4": "Compensation, Benefits & Perks",
+      "subsections4": {
         "pay_cycles": "Payroll frequency (Gusto/Rippling).",
         "equity_stock_options": {
           "vesting_schedule": "4-year total",
@@ -776,8 +776,8 @@
       }
     },
     {
-      "id": 5,
-      "category": "Time Off & Work-Life Balance",
+      "id5": 5,
+      "category5": "Time Off & Work-Life Balance",
       "subsections": {
         "pto_policy": "Accrual vs. Unlimited PTO rules.",
         "paid_holidays": "List of observed company holidays.",
@@ -787,9 +787,9 @@
       }
     },
     {
-      "id": 6,
-      "category": "Growth, Performance & Development",
-      "subsections": {
+      "id6": 6,
+      "category6": "Growth, Performance & Development",
+      "subsections6": {
         "performance_review": "360-degree feedback cycles.",
         "internal_mobility": "Department transfer application process.",
         "professional_development": "Reimbursement for courses and conferences.",
@@ -797,9 +797,9 @@
       }
     },
     {
-      "id": 7,
-      "category": "Offboarding & Transitions",
-      "subsections": {
+      "id7": 7,
+      "category7": "Offboarding & Transitions",
+      "subsections7": {
         "resignation": "Notice period requirements (2-4 weeks).",
         "termination": "Dismissal grounds and Performance Improvement Plans (PIPs).",
         "exit_interviews": "Feedback collection process.",
@@ -930,6 +930,63 @@
   "signatures": {
     "employee_digital_signature": null,
     "reviewer_digital_signature": null
+  }
+}, "Managerial Duties Checklist": {
+  "metadata": {
+    "manager_name": "",
+    "unit_name": "",
+    "review_period": "2026",
+    "last_updated": "2026-02-19"
+  },
+  "workforce_planning": {
+    "analyze_workload_and_needs": false,
+    "recommend_staffing_changes": false,
+    "review_new_or_revised_positions": false,
+    "obtain_approval_for_modifications": false
+  },
+  "talent_acquisition_and_onboarding": {
+    "interview_and_hiring_decisions": false,
+    "orient_subordinates_on_policies": false,
+    "review_position_responsibilities": false
+  },
+  "operations_and_delegation": {
+    "plan_and_delegate_assignments": false,
+    "establish_work_goals_and_standards": "Quantitative and qualitative standards",
+    "communicate_and_control_projects": false
+  },
+  "development_and_performance": {
+    "train_and_motivate_staff": false,
+    "evaluate_performance_and_document": false,
+    "discuss_performance_with_reports": false,
+    "inform_supervisor_of_results": false,
+    "review_duties_for_significant_changes": false
+  },
+  "personnel_administration": {
+    "recommend_salary_changes": false,
+    "recommend_promotions_and_awards": false,
+    "administer_discipline_and_corrective_action": false,
+    "ensure_proper_communication_of_developments": false,
+    "maintain_subordinate_documentation": false
+  }
+}, "Remote Work Schedule": {
+  "fields": {
+    "user_info": {
+      "Name": "text",
+      "Department": "text",
+      "Week": "number",
+      "Month": "text",
+      "Year": "number"
+    },
+    "weekly_goals": {
+      "type1": "list",
+      "label1": "Weekly Goals",
+      "count": 3
+    },
+    "weekly_blueprint": {
+      "type2": "map",
+      "label2": "Weekly Blueprint",
+      "days": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
+    }
   }
 }
         },
@@ -1502,6 +1559,96 @@
     "budget_variance": "",
     "instructions": ""
   }
+}, "Marketing Opportunity Analysis": {
+  "metadata": {
+    "Project Name": "text",
+    "Lead Analyst": "text",
+    "Date": "date"
+  },
+  "sections": {
+    "Market Definition": {
+      "Scope": "textarea",
+      "Valuation": "text",
+      "Trajectory": "text"
+    },
+    "Customer Analysis": {
+      "Target Segments": "textarea",
+      "Needs/Preferences": "textarea"
+    },
+    "Competitor Audit": {
+      "Competitors": "textarea"
+    },
+    "Strategic Environment": {
+      "Trends": "textarea"
+    },
+    "Opportunity Assessment": {
+      "Gap Analysis": "textarea",
+      "Entry Barriers": "textarea"
+    },
+    "Recommendations": {
+      "Action Plan": "textarea"
+    },
+    "Financial Viability": {
+      "Projections": "textarea"
+    }
+  }
+}, "Market Checklist": {
+  "sections": [
+    {
+      "id1": "market_analysis",
+      "question1": "Have you analysed the market and identified appealing features for different segments?",
+      "fields1": ["Market Analysis Status", "Key Appealing Features"]
+    },
+    {
+      "id2": "marketing_message",
+      "question2": "Have you described how your product/service benefits your clients?",
+      "fields2": ["Core Benefits Statement"]
+    },
+    {
+      "id3": "pricing_strategy",
+      "question3": "Have you prepared a pricing schedule and discount policy?",
+      "fields3": ["Pricing Overview", "Discount Structure"]
+    },
+    {
+      "id4": "sales_forecast",
+      "question4": "Have you prepared a sales forecast?",
+      "fields4": ["Forecast Summary"]
+    },
+    {
+      "id5": "media_promotions",
+      "question5": "What media, promotions, and publicity campaigns are planned?",
+      "fields5": ["Media Channels", "Sales Promotions", "Publicity Plan"]
+    },
+    {
+      "id6": "legal_distro",
+      "question6": "Have you addressed patenting and distribution channels?",
+      "fields6": ["Patent Status", "Distribution Strategy"]
+    }
+  ]
+}, "Marketing Strategy": {
+  "fields": {
+    "Header": {
+      "Company Name": "text"
+    },
+    "Executive Summary": {
+      "Vision": "textarea",
+      "Mission": "textarea",
+      "Key Goals": "textarea"
+    },
+    "Situation Analysis (SWOT)": {
+      "Strengths": "textarea",
+      "Weaknesses": "textarea",
+      "Opportunities": "textarea",
+      "Threats": "textarea"
+    },
+    "Core Identity": {
+      "Core Values": "textarea"
+    },
+    "Roadmap": {
+      "Long Term Goals": "textarea",
+      "Strategic Objectives": "textarea"
+    }
+  }
 }
         },
         "Project Management": {
@@ -1897,6 +2044,27 @@
     "rejection_reason": "",
     "required_reworks": []
   }
+}, "Quality Assurance Action Plan": {
+  "metadata": {
+    "Company": "text",
+    "Department": "text",
+    "Supervisor": "text"
+  },
+  "table_schema": {
+    "columns": [
+      "Issue No.",
+      "Issue Description",
+      "Proposed Action",
+      "Category",
+      "Priority",
+      "Assignee",
+      "Raised By",
+      "Status",
+      "Due Date",
+      "Comments"
+    ],
+    "rows": []
+  }
 }
         },
         "Safety and Security": {
@@ -2078,7 +2246,7 @@
   },
   "revision_history": [
     {
-      "version": "1.0.0",
+      "version1": "1.0.0",
       "date1": "2026-02-09",
       "change_description": "Initial creation of standardized sales flow.",
       "author": "",
@@ -2282,6 +2450,114 @@
     "start_date": "",
     "completion_date": "",
     "current_status": ""
+  }
+}, "Sales Proposal": {
+  "prepared_by": {
+    "name": "",
+    "role": "",
+    "phone": "555.555.5555",
+    "email": "info@yourbusiness.com"
+  },
+  "project_metadata": {
+    "project_name": "[SPECIFY NAME]",
+    "company_name": "[YOUR COMPANY NAME]"
+  },
+  "executive_summary": {
+    "client_name": "[RECEIVING PARTY NAME]",
+    "problem_statement": "[DESCRIBE PROBLEM or NEED]",
+    "proposed_solution": "[SPECIFY]",
+    "expected_outcome": "[BRIEFLY DESCRIBE OBJECTIVE(S)]",
+    "total_investment": "[AMOUNT]",
+    "key_benefits": [
+      "[LIST KEY BENEFITS OF USING YOUR SOLUTION]"
+    ]
+  },
+  "needs_analysis": {
+    "technical_requirements": "[STATE REQUIREMENTS]",
+    "timeline": {
+      "project_kickoff": "[DATE]",
+      "project_completion": "[DATE]"
+    },
+    "budget": {
+      "total_budget": "[AMOUNT]",
+      "overrun_penalty": "[AMOUNT]"
+    }
+  },
+  "solution_and_deliverables": {
+    "methodology": "[DETAILED DESCRIPTION OF INTENDED STRATEGY]",
+    "deliverables": [
+      "[LIST THE MAIN PRODUCT DELIVERABLES]"
+    ]
+  },
+  "competitive_advantage": {
+    "why_us": "[DESCRIBE SKILLS AND TRACK RECORD]",
+    "team_qualifications": "[ADDITIONAL OPTIONAL ELEMENTS]"
+  }
+}, "Sales Report": {
+  "metadata": {
+    "report_year": "2026",
+    "confidentiality_statement": "This document contains proprietary information provided in reliance upon the recipient's consent not to disclose.",
+    "contact_info": {
+      "phone": "555.555.5555",
+      "email": "info@yourbusiness.com"
+    }
+  },
+  "executive_overview": {
+    "current_position": "Summary of company issues, goals, and key strategies.",
+    "target_attainment": "Analysis of whether goals were met and how.",
+    "functional_state": {
+      "operations": "Current state of operations.",
+      "marketing": "Current state of marketing.",
+      "it": "Current state of information technology.",
+      "finance": "Current state of finance."
+    }
+  },
+  "financial_performance": {
+    "revenue_analysis": {
+      "formula": "Units Sold x Average Selling Price.",
+      "net_vs_gross": "Revenue minus deductions for returns/expenses.",
+      "total_revenue": 0.00
+    },
+    "profitability": {
+      "gross_profit": "Revenue minus cost of goods sold (COGS).",
+      "operating_profit": "Revenue minus all operating expenses.",
+      "profit_margin_percent": 0.0
+    }
+  },
+  "growth_and_strategy": {
+    "sales_growth": "Quarterly breakdown and expansion strategies.",
+    "valuation_impact": "How revenue growth reflects market share and influences company valuation."
+  }
+}, "Sales Addendum": {
+  "date_of_addendum": "2026-02-19",
+  "parties": {
+    "seller": {
+      "name1": "",
+      "address1": ""
+    },
+    "buyer": {
+      "name2": "",
+      "address2": ""
+    }
+  },
+  "recitals": {
+    "property_details": "Comprehensive description of the property/assets being sold.",
+    "original_agreement_reference": "Date or ID of the initial contract."
+  },
+  "closing_logistics": {
+    "date": "YYYY-MM-DD",
+    "time": "00:00 AM/PM",
+    "location": ""
+  },
+  "financial_terms": {
+    "payment_amount": 0.00,
+    "payment_method": "",
+    "payment_schedule": "e.g., Lump sum, installments"
+  },
+  "legal_clauses": {
+    "special_provisions": [
+      "Any specific conditions or contingencies added to the sale."
+    ]
   }
 }
         }
