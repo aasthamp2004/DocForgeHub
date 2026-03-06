@@ -81,7 +81,7 @@ def _get_or_create_database() -> str:
         "parent": {"type": "page_id", "page_id": NOTION_PAGE_ID},
         "title": [{"type": "text", "text": {"content": "DocForge Documents"}}],
         "properties": {
-            "Title": {"title": {}},
+            "Title":    {"title": {}},
             "Format": {
                 "select": {
                     "options": [
@@ -90,9 +90,9 @@ def _get_or_create_database() -> str:
                     ]
                 }
             },
-            "Doc Type": {"rich_text": {}},
-            "Created":  {"date": {}},
-            "DB ID":    {"number": {}},
+            "Doc Type":   {"rich_text": {}},
+            "Version":    {"number": {}},
+            "Created At": {"date": {}},
         }
     }
     res = _notion_request("post", f"{BASE_URL}/databases", json=payload)
@@ -252,7 +252,7 @@ def _excel_doc_to_blocks(excel_data: dict) -> list:
 # ─────────────────────────────────────────────────────────────────────────────
 
 def push_to_notion(title: str, doc_format: str, content: dict,
-                   db_id: int = None) -> dict:
+                   db_id: int = None, version: int = 1) -> dict:
     """
     Create a new Notion page inside the DocForge Documents database.
 
@@ -269,7 +269,7 @@ def push_to_notion(title: str, doc_format: str, content: dict,
 
     # Notion API limits: 100 blocks per request
     # We create the page first then append blocks in batches
-    from datetime import date
+    from datetime import datetime
 
     page_payload = {
         "parent": {"database_id": database_id},
@@ -278,8 +278,8 @@ def push_to_notion(title: str, doc_format: str, content: dict,
             "Title":    {"title": [{"text": {"content": title}}]},
             "Format":   {"select": {"name": "Excel" if doc_format == "excel" else "Word"}},
             "Doc Type": {"rich_text": [{"text": {"content": title}}]},
-            "Created":  {"date": {"start": date.today().isoformat()}},
-            **({"DB ID": {"number": db_id}} if db_id else {}),
+            "Version":    {"number": version},
+            "Created At": {"date": {"start": datetime.now().isoformat()}},
         },
         # Add first batch of blocks (max 100)
         "children": blocks[:100]

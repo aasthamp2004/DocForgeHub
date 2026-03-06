@@ -9,7 +9,7 @@ import pandas as pd
 
 # Reads BACKEND_URL from env when running in Docker,
 # falls back to localhost for local development
-BACKEND = os.getenv("BACKEND_URL", "http://127.0.0.1:8000")
+BACKEND = os.getenv("BACKEND_URL", "http://127.0.0.1:8080")
 
 st.set_page_config(page_title="DocForge AI", layout="wide", initial_sidebar_state="expanded")
 
@@ -337,16 +337,22 @@ def _render_history_page():
         badge_lbl  = "📊 Excel" if doc_format == "excel" else "📄 Word"
 
         # ── Card header ───────────────────────────────────────────────────────
+        version     = doc.get("version", 1)
+        version_lbl = doc.get("version_label", f"v{version}")
         st.markdown(f"""
         <div class="hist-card">
             <span class="hist-title">{title}</span>
             &nbsp;&nbsp;<span class="{badge_cls}">{badge_lbl}</span>
+            &nbsp;&nbsp;<span style="background:rgba(99,179,237,0.15);color:#63b3ed;
+                border:1px solid rgba(99,179,237,0.35);border-radius:4px;
+                padding:2px 8px;font-size:0.72rem;font-weight:700;">
+                {version_lbl}</span>
             <div class="hist-meta">🕒 {created_at} &nbsp;|&nbsp; ID #{doc_id}</div>
         </div>
         """, unsafe_allow_html=True)
 
         # ── Action row ────────────────────────────────────────────────────────
-        col1, col2, col3 = st.columns([2, 2, 8])
+        col1, col2, col3, col4 = st.columns([2, 2, 2, 6])
 
         with col1:
             view_key = f"view_{doc_id}"
@@ -354,6 +360,11 @@ def _render_history_page():
                 st.session_state[view_key] = not st.session_state.get(view_key, False)
 
         with col2:
+            ver_key = f"ver_{doc_id}"
+            if st.button("🕓 Versions", key=f"btn_ver_{doc_id}", use_container_width=True):
+                st.session_state[ver_key] = not st.session_state.get(ver_key, False)
+
+        with col3:
             if st.button("🗑 Delete", key=f"btn_del_{doc_id}", use_container_width=True):
                 del_res = requests.delete(f"{BACKEND}/documents/{doc_id}")
                 if del_res.status_code == 200:
@@ -361,6 +372,45 @@ def _render_history_page():
                     st.rerun()
                 else:
                     st.error("Delete failed")
+
+        # ── Version history panel ─────────────────────────────────────────────
+        if st.session_state.get(f"ver_{doc_id}", False):
+            ver_res = requests.get(f"{BACKEND}/documents/{doc_id}/versions")
+            if ver_res.status_code == 200:
+                versions = ver_res.json().get("versions", [])
+                with st.expander(f"🕓 Version History — {title} ({len(versions)} version(s))", expanded=True):
+                    for v in versions:
+                        v_id      = v["id"]
+                        v_num     = v["version"]
+                        v_created = v.get("created_at", "")
+                        v_fmt     = v.get("doc_format", "word")
+                        v_ext     = v.get("file_ext", "docx")
+                        is_latest = (v_id == doc_id)
+                        label     = f"**v{v_num}**{'  ✅ latest' if is_latest else ''}"
+                        st.markdown(f"{label} &nbsp; 🕒 {v_created} &nbsp; ID #{v_id}")
+                        vcol1, vcol2 = st.columns([1, 1])
+                        with vcol1:
+                            dl = requests.get(f"{BACKEND}/documents/{v_id}/download")
+                            if dl.status_code == 200:
+                                mime = (
+                                    "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+                                    if v_ext == "xlsx"
+                                    else "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+                                )
+                                safe = title.replace(" ", "_")[:40]
+                                st.download_button(
+                                    label=f"⬇️ Download v{v_num}",
+                                    data=dl.content,
+                                    file_name=f"{safe}_v{v_num}.{v_ext}",
+                                    mime=mime,
+                                    use_container_width=True,
+                                    key=f"dl_v_{v_id}"
+                                )
+                        with vcol2:
+                            if st.button(f"🗑 Delete v{v_num}", key=f"del_v_{v_id}", use_container_width=True):
+                                requests.delete(f"{BACKEND}/documents/{v_id}")
+                                st.rerun()
+                        st.markdown("---")
 
         # ── Expanded detail (only when View is toggled on) ────────────────────
         if st.session_state.get(f"view_{doc_id}", False):
@@ -444,9 +494,18 @@ def _render_history_page():
 def push_to_notion_ui(title: str, doc_format: str, doc_content: dict,
                       db_id: int = None, notion_key: str = "notion_page_id"):
     """Call /notion/push and store the returned page_id in session state."""
+    # Include version in Notion title if available
+    notion_title = title
+    if db_id:
+        ver_check = requests.get(f"{BACKEND}/documents/{db_id}/versions")
+        if ver_check.status_code == 200:
+            versions = ver_check.json().get("versions", [])
+            v_num = next((v["version"] for v in versions if v["id"] == db_id), None)
+            if v_num and v_num > 1:
+                notion_title = f"{title} (v{v_num})"
     with st.spinner("Pushing to Notion..."):
         res = requests.post(f"{BACKEND}/notion/push", json={
-            "title":      title,
+            "title":      notion_title,
             "doc_format": doc_format,
             "content":    doc_content,
             "db_id":      db_id,
@@ -486,7 +545,7 @@ with st.sidebar:
     st.markdown("""
     <div style="padding:12px;background:rgba(245,200,66,0.06);border:1px solid rgba(245,200,66,0.2);
                 border-radius:8px;font-size:0.78rem;color:#7a94b8;line-height:1.6;">
-        💾 Documents are <strong style="color:#f5c842">auto-saved</strong> to your database after generation.
+        💾 Use the <strong style="color:#f5c842">Save to History</strong> button after generation.
     </div>
     """, unsafe_allow_html=True)
 
@@ -657,14 +716,17 @@ def create_excel_file_from_data(excel_data: dict) -> BytesIO:
     raise RuntimeError(f"Excel export failed [{res.status_code}]: {res.text[:300]}")
 
 def save_to_db(title: str, doc_type: str, doc_format: str,
-               content: dict, file_buf: BytesIO = None, file_ext: str = None):
-    """Save document to PostgreSQL via FastAPI. Shows success/error in UI."""
+               content: dict, file_buf: BytesIO = None, file_ext: str = None,
+               save_mode: str = "new_version", overwrite_id: int = None):
+    """Save document to PostgreSQL via FastAPI with version control."""
     payload = {
-        "title":      title,
-        "doc_type":   doc_type,
-        "doc_format": doc_format,
-        "content":    content,
-        "file_ext":   file_ext,
+        "title":        title,
+        "doc_type":     doc_type,
+        "doc_format":   doc_format,
+        "content":      content,
+        "file_ext":     file_ext,
+        "save_mode":    save_mode,
+        "overwrite_id": overwrite_id,
     }
     if file_buf:
         file_buf.seek(0)
@@ -672,12 +734,58 @@ def save_to_db(title: str, doc_type: str, doc_format: str,
 
     res = requests.post(f"{BACKEND}/documents/save", json=payload)
     if res.status_code == 200:
-        doc_id = res.json().get("id")
-        st.toast(f"✅ Saved to history (ID #{doc_id})", icon="💾")
+        data   = res.json()
+        doc_id = data.get("id")
+        ver    = data.get("version", 1)
+        mode   = data.get("mode", "new_version")
+        if mode == "overwrite":
+            st.toast(f"✅ Overwritten (v{ver})", icon="💾")
+        else:
+            st.toast(f"✅ Saved as v{ver} (ID #{doc_id})", icon="💾")
         return doc_id
     else:
         st.warning(f"Could not save to history: {res.text[:200]}")
         return None
+
+
+def version_save_dialog(title: str, doc_type: str, doc_format: str,
+                        content: dict, file_buf: BytesIO = None, file_ext: str = None):
+    """
+    Check if title already exists. If yes, show Save as new version / Overwrite choice.
+    If no, save directly as v1.
+    """
+    check = requests.post(f"{BACKEND}/documents/check-version", json={"title": title})
+    if check.status_code != 200:
+        st.warning("Could not check version history.")
+        return
+
+    data   = check.json()
+    exists = data.get("exists", False)
+
+    if not exists:
+        # First save — no choice needed
+        save_to_db(title, doc_type, doc_format, content, file_buf, file_ext,
+                   save_mode="new_version")
+        return
+
+    # Title already exists — show choice
+    latest_ver = data.get("latest_version", 1)
+    latest_id  = data.get("latest_id")
+
+    st.info(f"**'{title}'** is already saved (current: v{latest_ver}). Choose how to save:")
+    col1, col2 = st.columns(2)
+    with col1:
+        if st.button(f"📄 Save as new version (v{latest_ver + 1})", use_container_width=True):
+            save_to_db(title, doc_type, doc_format, content, file_buf, file_ext,
+                       save_mode="new_version")
+            st.session_state.pop("pending_save", None)
+            st.rerun()
+    with col2:
+        if st.button(f"🔄 Overwrite current (v{latest_ver})", use_container_width=True):
+            save_to_db(title, doc_type, doc_format, content, file_buf, file_ext,
+                       save_mode="overwrite", overwrite_id=latest_id)
+            st.session_state.pop("pending_save", None)
+            st.rerun()
 
 
 
@@ -689,7 +797,7 @@ def save_to_db(title: str, doc_type: str, doc_format: str,
 st.markdown('<div class="step-label">Step 1 — Describe Your Document</div>', unsafe_allow_html=True)
 user_prompt = st.text_input(
     "Describe the document you want to generate",
-    placeholder="e.g. Balance Sheet for FY2024  •  SOP for lead qualification  •  Product Proposal",
+    placeholder="e.g. Policy  •  SOP  •  Proposal",
     label_visibility="collapsed"
 )
 
@@ -867,14 +975,14 @@ if "questions" in st.session_state:
                 raw.pop("doc_type", None)
                 st.session_state["excel_data"] = raw
                 st.session_state.pop("generated_sections", None)
-                # Auto-save excel doc to DB
-                save_to_db(
-                    title      = st.session_state["title"],
-                    doc_type   = st.session_state["title"],
-                    doc_format = "excel",
-                    content    = st.session_state["excel_data"],
-                    file_ext   = "xlsx"
-                )
+                # Mark pending save so user can choose version mode
+                st.session_state["pending_save"] = {
+                    "title":      st.session_state["title"],
+                    "doc_type":   st.session_state["title"],
+                    "doc_format": "excel",
+                    "content":    st.session_state["excel_data"],
+                    "file_ext":   "xlsx",
+                }
             else:
                 # Unwrap any wrapper keys
                 if isinstance(raw, dict) and list(raw.keys()) == ["Document"]:
@@ -885,15 +993,15 @@ if "questions" in st.session_state:
                 st.session_state.pop("excel_data", None)
 
             st.success("Document generated!")
-            # Auto-save word doc (excel is saved in its own branch above)
+            # Mark pending save so user can choose version mode
             if st.session_state.get("doc_format", "word") == "word":
-                save_to_db(
-                    title      = st.session_state["title"],
-                    doc_type   = st.session_state["title"],
-                    doc_format = "word",
-                    content    = st.session_state.get("generated_sections", {}),
-                    file_ext   = "docx"
-                )
+                st.session_state["pending_save"] = {
+                    "title":      st.session_state["title"],
+                    "doc_type":   st.session_state["title"],
+                    "doc_format": "word",
+                    "content":    st.session_state.get("generated_sections", {}),
+                    "file_ext":   "docx",
+                }
             st.rerun()
 
 
@@ -938,6 +1046,23 @@ if "generated_sections" in st.session_state:
 
     st.divider()
     st.markdown('<div class="step-label">Download & Export</div>', unsafe_allow_html=True)
+
+    # ── Save to History (version-aware) ─────────────────────────────────────
+    if "pending_save" in st.session_state:
+        ps = st.session_state["pending_save"]
+        if st.button("💾 Save to History", use_container_width=True, key="save_word_btn"):
+            st.session_state["show_version_dialog_word"] = True
+        if st.session_state.get("show_version_dialog_word"):
+            version_save_dialog(
+                title      = ps["title"],
+                doc_type   = ps["doc_type"],
+                doc_format = ps["doc_format"],
+                content    = ps["content"],
+                file_ext   = ps["file_ext"],
+            )
+    else:
+        st.success("\u2705 Already saved to history.", icon="\U0001f4be")
+
     docx_file  = create_word_document(st.session_state["title"], st.session_state["generated_sections"])
     safe_title = st.session_state["title"].replace(" ", "_")[:40]
 
@@ -1047,6 +1172,23 @@ if "excel_data" in st.session_state:
     # ── Download Excel ────────────────────────────────────────────────────────
     st.divider()
     st.markdown('<div class="step-label">Download & Export</div>', unsafe_allow_html=True)
+
+    # ── Save to History (version-aware) ─────────────────────────────────────
+    if "pending_save" in st.session_state:
+        ps = st.session_state["pending_save"]
+        if st.button("💾 Save to History", use_container_width=True, key="save_excel_btn"):
+            st.session_state["show_version_dialog_excel"] = True
+        if st.session_state.get("show_version_dialog_excel"):
+            version_save_dialog(
+                title      = ps["title"],
+                doc_type   = ps["doc_type"],
+                doc_format = ps["doc_format"],
+                content    = ps["content"],
+                file_ext   = ps["file_ext"],
+            )
+    else:
+        st.success("\u2705 Already saved to history.", icon="\U0001f4be")
+
 
     try:
         xlsx_file  = create_excel_file_from_data(st.session_state["excel_data"])
