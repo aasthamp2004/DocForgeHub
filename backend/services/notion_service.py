@@ -24,7 +24,7 @@ NOTION_TOKEN   = os.getenv("NOTION_TOKEN")
 NOTION_PAGE_ID = os.getenv("NOTION_PAGE_ID")
 NOTION_VERSION = "2022-06-28"
 
-HEADERS = {
+NOTION_HEADERS = {
     "Authorization":  f"Bearer {NOTION_TOKEN}",
     "Notion-Version": NOTION_VERSION,
     "Content-Type":   "application/json",
@@ -39,7 +39,7 @@ def _notion_request(method: str, url: str, **kwargs) -> dict:
     Throttle + backoff handled by redis_svc.notion_request().
     """
     def _do_request():
-        resp = getattr(requests, method)(url, headers=HEADERS, **kwargs)
+        resp = getattr(requests, method)(url, headers=NOTION_HEADERS, **kwargs)
 
         if resp.status_code == 429:
             retry_after = int(resp.headers.get("Retry-After", 1))
@@ -269,7 +269,9 @@ def push_to_notion(title: str, doc_format: str, content: dict,
 
     # Notion API limits: 100 blocks per request
     # We create the page first then append blocks in batches
-    from datetime import datetime
+    from datetime import datetime, timezone, timedelta
+    IST = timezone(timedelta(hours=5, minutes=30))
+    now_ist = datetime.now(IST).isoformat()
 
     page_payload = {
         "parent": {"database_id": database_id},
@@ -279,7 +281,7 @@ def push_to_notion(title: str, doc_format: str, content: dict,
             "Format":   {"select": {"name": "Excel" if doc_format == "excel" else "Word"}},
             "Doc Type": {"rich_text": [{"text": {"content": title}}]},
             "Version":    {"number": version},
-            "Created At": {"date": {"start": datetime.now().isoformat()}},
+            "Created At": {"date": {"start": now_ist}},
         },
         # Add first batch of blocks (max 100)
         "children": blocks[:100]
@@ -304,24 +306,39 @@ def update_notion_page(page_id: str, title: str, doc_format: str,
                        content: dict) -> dict:
     """
     Replace all content blocks in an existing Notion page.
-    Used when the user refines a section after already pushing to Notion.
+    If the page no longer exists (404), creates a fresh page instead.
     """
-    # Get existing child blocks
-    existing = _notion_request("get", f"{BASE_URL}/blocks/{page_id}/children").get("results", [])
+    try:
+        # Check page still exists before trying to update
+        check = requests.get(
+            f"{BASE_URL}/blocks/{page_id}/children",
+            headers=NOTION_HEADERS,
+        )
+        if check.status_code == 404:
+            # Page was deleted in Notion — create a fresh one
+            return push_to_notion(title=title, doc_format=doc_format, content=content)
 
-    # Archive (delete) all existing blocks
-    for block in existing:
-        _notion_request("delete", f"{BASE_URL}/blocks/{block['id']}")
+        existing = check.json().get("results", [])
 
-    # Build new blocks
-    if doc_format == "excel":
-        blocks = _excel_doc_to_blocks(content)
-    else:
-        blocks = _word_doc_to_blocks(content)
+        # Archive (delete) all existing blocks
+        for block in existing:
+            _notion_request("delete", f"{BASE_URL}/blocks/{block['id']}")
 
-    # Append in batches
-    for i in range(0, len(blocks), 100):
-        batch = blocks[i:i+100]
-        _notion_request("patch", f"{BASE_URL}/blocks/{page_id}/children", json={"children": batch})
+        # Build new blocks
+        if doc_format == "excel":
+            blocks = _excel_doc_to_blocks(content)
+        else:
+            blocks = _word_doc_to_blocks(content)
 
-    return {"page_id": page_id, "url": f"https://notion.so/{page_id.replace('-', '')}"}
+        # Append in batches
+        for i in range(0, len(blocks), 100):
+            batch = blocks[i:i+100]
+            _notion_request("patch", f"{BASE_URL}/blocks/{page_id}/children", json={"children": batch})
+
+        return {"page_id": page_id, "url": f"https://notion.so/{page_id.replace('-', '')}"}
+
+    except Exception as e:
+        # If anything goes wrong, attempt a fresh push
+        if "404" in str(e):
+            return push_to_notion(title=title, doc_format=doc_format, content=content)
+        raise
