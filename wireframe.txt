@@ -9,7 +9,7 @@
 │               │                                             │
 │ ⚡ DocForge    │  ┌──────────────────────────────────────┐   │
 │ DOCUMENT GEN  │  │              HERO CARD               │   │
-│               │  │  ⚡ DocForge AI                       │   │
+│               │  │  ⚡ DocForgeHub                       │   │
 │ ● Generate    │  │  Tagline text                        │   │
 │ ○ History     │  │                     [New Doc Btn]    │   │
 │               │  └──────────────────────────────────────┘   │

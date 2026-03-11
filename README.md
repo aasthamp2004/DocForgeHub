@@ -64,32 +64,17 @@ All LLM responses are converted to JSON before being stored or returned — exce
 
 ## Setup
 
-### Using Docker (Recommended)
-
-```bash
-git clone https://github.com/aasthamp2004/AP-s-DocForge-Hub.git
-cd AP-s-DocForge-Hub
-cp .env.example .env   # fill in your credentials
-docker compose up --build
-```
-
-| Service | URL |
-|---|---|
-| Streamlit UI | http://localhost:8501 |
-| FastAPI docs | http://localhost:8000/docs |
-| Health check | http://localhost:8000/health |
-
-### Local (No Docker)
+### Local
 
 ```bash
 python -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
 
 # Terminal 1
-uvicorn main:app --reload --port 8000
+uvicorn main:app --reload --port 8080
 
 # Terminal 2
-streamlit run mainstream.py
+streamlit run mainstream3.py
 ```
 
 ---
@@ -100,8 +85,8 @@ streamlit run mainstream.py
 # Azure OpenAI
 AZURE_OPENAI_LLM_KEY=
 AZURE_OPENAI_LLM_ENDPOINT=
-AZURE_OPENAI_LLM_API_VERSION=2024-08-01-preview
-AZURE_OPENAI_LLM_DEPLOYMENT=gpt-4o
+AZURE_OPENAI_LLM_API_VERSION=
+AZURE_OPENAI_LLM_DEPLOYMENT=
 
 # PostgreSQL
 POSTGRES_HOST=db          # use 'db' inside Docker, 'localhost' for local
@@ -163,21 +148,3 @@ CREATE TABLE documents (
     file_ext    TEXT,                -- 'docx' | 'xlsx'
     created_at  TIMESTAMP DEFAULT NOW()
 );
-```
-
----
-
-## Docker Containers
-
-| Container | Image | Port |
-|---|---|---|
-| `docforge_api` | Built from Dockerfile | 8000 |
-| `docforge_ui` | Built from Dockerfile | 8501 |
-| `docforge_db` | postgres:15-alpine | 5432 |
-| `docforge_redis` | redis:7-alpine | 6379 |
-
-```bash
-docker compose up -d          # run in background
-docker compose logs -f api    # follow API logs
-docker compose down -v        # stop + wipe volumes
-```

@@ -576,7 +576,7 @@ def push_to_notion_ui(title: str, doc_format: str, doc_content: dict,
 with st.sidebar:
     st.markdown("""
     <div class="sidebar-logo">
-        <div class="sidebar-logo-text">⚡ DocForgeHub</div>
+        <div class="sidebar-logo-text">⚡ DocForgeHub </div>
         <div class="sidebar-logo-sub">Document Generator</div>
     </div>
     """, unsafe_allow_html=True)
