@@ -11,7 +11,7 @@ import pandas as pd
 # falls back to localhost for local development
 BACKEND = os.getenv("BACKEND_URL", "http://127.0.0.1:8080")
 
-st.set_page_config(page_title="DocForge AI", layout="wide", initial_sidebar_state="expanded")
+st.set_page_config(page_title="My DocForgeHub", page_icon="📃", layout="wide", initial_sidebar_state="expanded")
 
 # ─────────────────────────────────────────────────────────────────────────────
 # CSS — Navy + Gold theme
@@ -331,8 +331,9 @@ def _render_history_page():
         doc_id     = doc["id"]
         title      = doc["title"]
         doc_format = doc.get("doc_format", "word")
-        created_at = doc.get("created_at", "")
+        created_at = to_ist(doc.get("created_at", ""))
         file_ext   = doc.get("file_ext", "docx")
+        department = doc.get("doc_type", "General")   # doc_type stores department
         badge_cls  = "format-badge-excel" if doc_format == "excel" else "format-badge-word"
         badge_lbl  = "📊 Excel" if doc_format == "excel" else "📄 Word"
 
@@ -352,7 +353,7 @@ def _render_history_page():
         """, unsafe_allow_html=True)
 
         # ── Action row ────────────────────────────────────────────────────────
-        col1, col2, col3, col4 = st.columns([2, 2, 2, 6])
+        col1, col2, col3, col4, col5 = st.columns([2, 2, 2, 2, 2])
 
         with col1:
             view_key = f"view_{doc_id}"
@@ -365,6 +366,60 @@ def _render_history_page():
                 st.session_state[ver_key] = not st.session_state.get(ver_key, False)
 
         with col3:
+            mime = (
+                "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+                if file_ext == "xlsx"
+                else "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+            )
+            safe_fname = title.replace(" ", "_")[:40]
+            # Use a trigger button — fetch file only when clicked
+            if st.button("⬇️ Download", use_container_width=True, key=f"dl_trigger_{doc_id}"):
+                st.session_state[f"dl_ready_{doc_id}"] = True
+            if st.session_state.get(f"dl_ready_{doc_id}"):
+                dl_quick = requests.get(f"{BACKEND}/documents/{doc_id}/download")
+                if dl_quick.status_code == 200:
+                    st.download_button(
+                        label=f"⬇️ Save .{file_ext}",
+                        data=dl_quick.content,
+                        file_name=f"{safe_fname}_v{version}.{file_ext}",
+                        mime=mime,
+                        use_container_width=True,
+                        key=f"dl_card_{doc_id}",
+                    )
+                else:
+                    st.caption("File not available.")
+                    st.session_state.pop(f"dl_ready_{doc_id}", None)
+
+        with col4:
+            already_pushed = st.session_state.get(f"notion_hist_{doc_id}")
+            btn_notion_lbl = "🔄 Update Notion" if already_pushed else "🔗 Push to Notion"
+            if st.button(btn_notion_lbl, key=f"notion_card_{doc_id}", use_container_width=True):
+                detail_res = requests.get(f"{BACKEND}/documents/{doc_id}")
+                if detail_res.status_code == 200:
+                    doc_content = detail_res.json().get("content", {})
+                    if already_pushed:
+                        with st.spinner("Updating Notion..."):
+                            res = requests.post(f"{BACKEND}/notion/update", json={
+                                "page_id":    already_pushed,
+                                "title":      title,
+                                "doc_format": doc_format,
+                                "content":    doc_content,
+                            })
+                        if res.status_code == 200:
+                            notion_url = res.json().get("url", "")
+                            st.success("✅ Updated!")
+                            st.markdown(f'<a href="{notion_url}" target="_blank" style="color:#f5c842;font-size:0.82rem;">🔗 Open in Notion ↗</a>', unsafe_allow_html=True)
+                        elif res.status_code == 500 and "404" in res.text:
+                            st.session_state.pop(f"notion_hist_{doc_id}", None)
+                            push_to_notion_ui(title, doc_format, doc_content, db_id=doc_id,
+                                              notion_key=f"notion_hist_{doc_id}", department=department)
+                        else:
+                            st.error(f"Failed: {res.text[:150]}")
+                    else:
+                        push_to_notion_ui(title, doc_format, doc_content, db_id=doc_id,
+                                          notion_key=f"notion_hist_{doc_id}", department=department)
+
+        with col5:
             if st.button("🗑 Delete", key=f"btn_del_{doc_id}", use_container_width=True):
                 del_res = requests.delete(f"{BACKEND}/documents/{doc_id}")
                 if del_res.status_code == 200:
@@ -382,7 +437,7 @@ def _render_history_page():
                     for v in versions:
                         v_id      = v["id"]
                         v_num     = v["version"]
-                        v_created = v.get("created_at", "")
+                        v_created = to_ist(v.get("created_at", ""))
                         v_fmt     = v.get("doc_format", "word")
                         v_ext     = v.get("file_ext", "docx")
                         is_latest = (v_id == doc_id)
@@ -433,7 +488,11 @@ def _render_history_page():
                             rows    = sheet.get("rows", [])
                             st.markdown(f"**{sname}**")
                             if headers and rows:
+                                max_cols = max(len(headers), max((len(r) for r in rows), default=0))
+                                if len(headers) < max_cols:
+                                    headers = headers + [f"Col {i+1}" for i in range(len(headers), max_cols)]
                                 padded = [r + [""] * max(0, len(headers) - len(r)) for r in rows]
+                                padded = [r[:len(headers)] for r in padded]
                                 st.dataframe(
                                     pd.DataFrame(padded, columns=headers),
                                     use_container_width=True,
@@ -453,48 +512,32 @@ def _render_history_page():
                                     st.write(f"**{k}:** {v}")
                             st.markdown("---")
 
-                    # ── Download button ───────────────────────────────────────
-                    dl_res = requests.get(
-                        f"{BACKEND}/documents/{doc_id}/download",
-                        stream=True
-                    )
-                    safe_title = title.replace(" ", "_")[:40]
-                    hcol1, hcol2 = st.columns([1, 1])
-
-                    with hcol1:
-                        if dl_res.status_code == 200:
-                            mime = (
-                                "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
-                                if file_ext == "xlsx"
-                                else "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
-                            )
-                            st.download_button(
-                                label=f"⬇️ Download .{file_ext}",
-                                data=dl_res.content,
-                                file_name=f"{safe_title}.{file_ext}",
-                                mime=mime,
-                                use_container_width=True,
-                                key=f"dl_{doc_id}"
-                            )
-                        else:
-                            st.caption("No file stored for download.")
-
-                    with hcol2:
-                        if st.button("🔗 Push to Notion", key=f"notion_{doc_id}",
-                                     use_container_width=True):
-                            push_to_notion_ui(
-                                title, doc_format, doc_content,
-                                db_id=doc_id,
-                                notion_key=f"notion_hist_{doc_id}"
-                            )
+                    st.caption("Use the Download and Push to Notion buttons on the card above.")
 
         st.markdown("")  # spacer between cards
 
 
+def to_ist(dt_str: str) -> str:
+    """Convert UTC datetime string from DB to IST (UTC+5:30) for display."""
+    if not dt_str:
+        return ""
+    try:
+        from datetime import datetime, timezone, timedelta
+        IST = timezone(timedelta(hours=5, minutes=30))
+        # Handle both "YYYY-MM-DD HH:MM:SS" and ISO format
+        dt_str_clean = dt_str.replace("T", " ").split(".")[0]
+        dt = datetime.strptime(dt_str_clean, "%Y-%m-%d %H:%M:%S")
+        dt_utc = dt.replace(tzinfo=timezone.utc)
+        dt_ist = dt_utc.astimezone(IST)
+        return dt_ist.strftime("%d %b %Y, %I:%M %p")
+    except Exception:
+        return dt_str  # fallback to raw string if parsing fails
+
+
 def push_to_notion_ui(title: str, doc_format: str, doc_content: dict,
-                      db_id: int = None, notion_key: str = "notion_page_id"):
+                      db_id: int = None, notion_key: str = "notion_page_id",
+                      department: str = None):
     """Call /notion/push and store the returned page_id in session state."""
-    # Include version in Notion title if available
     notion_title = title
     if db_id:
         ver_check = requests.get(f"{BACKEND}/documents/{db_id}/versions")
@@ -503,12 +546,14 @@ def push_to_notion_ui(title: str, doc_format: str, doc_content: dict,
             v_num = next((v["version"] for v in versions if v["id"] == db_id), None)
             if v_num and v_num > 1:
                 notion_title = f"{title} (v{v_num})"
+    dept = department or st.session_state.get("department", "General")
     with st.spinner("Pushing to Notion..."):
         res = requests.post(f"{BACKEND}/notion/push", json={
             "title":      notion_title,
             "doc_format": doc_format,
             "content":    doc_content,
             "db_id":      db_id,
+            "department": dept,
         })
     if res.status_code == 200:
         data = res.json()
@@ -531,7 +576,7 @@ def push_to_notion_ui(title: str, doc_format: str, doc_content: dict,
 with st.sidebar:
     st.markdown("""
     <div class="sidebar-logo">
-        <div class="sidebar-logo-text">⚡ DocForge AI</div>
+        <div class="sidebar-logo-text">⚡ DocForgeHub</div>
         <div class="sidebar-logo-sub">Document Generator</div>
     </div>
     """, unsafe_allow_html=True)
@@ -562,7 +607,7 @@ if page == "📚  Document History":
 
 st.markdown("""
 <div class="page-header">
-    <h1>⚡ DocForge AI</h1>
+    <h1>⚡ DocForgeHub</h1>
     <p>Generate professional Word documents and Excel spreadsheets using AI — in seconds.</p>
 </div>
 """, unsafe_allow_html=True)
@@ -663,8 +708,12 @@ def render_excel_document(title, sheets):
             st.caption(description)
 
         if headers and rows:
-            # Pad rows to header length
+            # Reconcile headers vs row widths — handle both directions
+            max_cols = max(len(headers), max((len(r) for r in rows), default=0))
+            if len(headers) < max_cols:
+                headers = headers + [f"Col {i+1}" for i in range(len(headers), max_cols)]
             padded = [r + [""] * max(0, len(headers) - len(r)) for r in rows]
+            padded = [r[:len(headers)] for r in padded]  # trim if somehow still longer
             df = pd.DataFrame(padded, columns=headers)
 
             # Normalise bold indices — LLM sometimes returns strings ("0") not ints
@@ -797,7 +846,7 @@ def version_save_dialog(title: str, doc_type: str, doc_format: str,
 st.markdown('<div class="step-label">Step 1 — Describe Your Document</div>', unsafe_allow_html=True)
 user_prompt = st.text_input(
     "Describe the document you want to generate",
-    placeholder="e.g. Policy  •  SOP  •  Proposal",
+    placeholder="e.g. Balance Sheet for FY2024  •  SOP for lead qualification  •  Product Proposal",
     label_visibility="collapsed"
 )
 
@@ -812,6 +861,7 @@ if st.button("⚡ Plan Document"):
             st.session_state["title"]      = plan["title"]
             st.session_state["sections"]   = plan["sections"]
             st.session_state["doc_format"] = plan.get("doc_format", "word")
+            st.session_state["department"] = plan.get("department", "General")
             for k in ["questions", "generated_sections", "excel_data"]:
                 st.session_state.pop(k, None)
             st.success("Document structure generated!")
@@ -978,7 +1028,7 @@ if "questions" in st.session_state:
                 # Mark pending save so user can choose version mode
                 st.session_state["pending_save"] = {
                     "title":      st.session_state["title"],
-                    "doc_type":   st.session_state["title"],
+                    "doc_type":   st.session_state.get("department", "General"),
                     "doc_format": "excel",
                     "content":    st.session_state["excel_data"],
                     "file_ext":   "xlsx",
@@ -997,7 +1047,7 @@ if "questions" in st.session_state:
             if st.session_state.get("doc_format", "word") == "word":
                 st.session_state["pending_save"] = {
                     "title":      st.session_state["title"],
-                    "doc_type":   st.session_state["title"],
+                    "doc_type":   st.session_state.get("department", "General"),
                     "doc_format": "word",
                     "content":    st.session_state.get("generated_sections", {}),
                     "file_ext":   "docx",
@@ -1092,6 +1142,15 @@ if "generated_sections" in st.session_state:
                     notion_url = res.json().get("url", "")
                     st.success("✅ Notion page updated!")
                     st.markdown(f'<a href="{notion_url}" target="_blank" style="display:inline-block;margin-top:8px;padding:8px 18px;background:linear-gradient(135deg,#f5c842,#e6b830);color:#0a0e1a;font-weight:700;border-radius:8px;text-decoration:none;font-size:0.88rem;">🔗 Open in Notion</a>', unsafe_allow_html=True)
+                elif res.status_code == 500 and "404" in res.text:
+                    # Stale page ID — clear it and create a fresh page
+                    st.session_state.pop("notion_page_id_word", None)
+                    st.warning("Previous Notion page not found — creating a new one...")
+                    push_to_notion_ui(
+                        st.session_state["title"], "word",
+                        st.session_state["generated_sections"],
+                        notion_key="notion_page_id_word"
+                    )
                 else:
                     st.error(f"Update failed: {res.text[:200]}")
             else:
@@ -1100,6 +1159,15 @@ if "generated_sections" in st.session_state:
                     st.session_state["generated_sections"],
                     notion_key="notion_page_id_word"
                 )
+
+    # ── Create Another Document ───────────────────────────────────────────────
+    st.markdown("---")
+    if st.button("✨ Create Another Document", use_container_width=True, key="new_doc_word"):
+        for key in ["title", "sections", "doc_format", "department",
+                    "questions", "answers", "generated_sections",
+                    "pending_save", "notion_page_id_word", "notion_page_id_excel"]:
+            st.session_state.pop(key, None)
+        st.rerun()
 
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -1126,7 +1194,11 @@ if "excel_data" in st.session_state:
             headers = sheet.get("headers", [])
             rows    = sheet.get("rows", [])
             if headers and rows:
+                max_cols = max(len(headers), max((len(r) for r in rows), default=0))
+                if len(headers) < max_cols:
+                    headers = headers + [f"Col {i+1}" for i in range(len(headers), max_cols)]
                 padded = [r + [""] * max(0, len(headers) - len(r)) for r in rows]
+                padded = [r[:len(headers)] for r in padded]
                 st.dataframe(
                     pd.DataFrame(padded, columns=headers),
                     use_container_width=True,
@@ -1219,6 +1291,14 @@ if "excel_data" in st.session_state:
                         notion_url = res.json().get("url", "")
                         st.success("✅ Notion page updated!")
                         st.markdown(f'<a href="{notion_url}" target="_blank" style="display:inline-block;margin-top:8px;padding:8px 18px;background:linear-gradient(135deg,#f5c842,#e6b830);color:#0a0e1a;font-weight:700;border-radius:8px;text-decoration:none;font-size:0.88rem;">🔗 Open in Notion</a>', unsafe_allow_html=True)
+                    elif res.status_code == 500 and "404" in res.text:
+                        st.session_state.pop("notion_page_id_excel", None)
+                        st.warning("Previous Notion page not found — creating a new one...")
+                        push_to_notion_ui(
+                            st.session_state["title"], "excel",
+                            st.session_state["excel_data"],
+                            notion_key="notion_page_id_excel"
+                        )
                     else:
                         st.error(f"Update failed: {res.text[:200]}")
                 else:
@@ -1230,3 +1310,12 @@ if "excel_data" in st.session_state:
     except Exception as e:
         st.error(f"Excel export error: {e}")
         st.info("Make sure `openpyxl` is installed: `pip install openpyxl`")
+
+    # ── Create Another Document ───────────────────────────────────────────────
+    st.markdown("---")
+    if st.button("✨ Create Another Document", use_container_width=True, key="new_doc_excel"):
+        for key in ["title", "sections", "doc_format", "department",
+                    "questions", "answers", "generated_sections", "excel_data",
+                    "pending_save", "notion_page_id_word", "notion_page_id_excel"]:
+            st.session_state.pop(key, None)
+        st.rerun()

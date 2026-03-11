@@ -26,12 +26,16 @@ Instructions:
    appropriate for a "{title}" document — do NOT write "No content provided" or leave sections empty.
 4. Each section should be 2-5 sentences minimum with substance and detail.
 5. Use industry-standard language and structure.
+6. Always write dates in dd/mm/yyyy format (e.g. 22/12/2025, not 22/12/25 or 12/22/2025).
 
 Return strictly valid JSON with this exact structure:
 {{
   "Section Name": "Full generated content here as a string",
   "Another Section": "Full generated content here"
 }}
+
+For "Employee Handbook": 
+  → generate detailed content for each section
 
 No explanation. No markdown. Only JSON.
 """

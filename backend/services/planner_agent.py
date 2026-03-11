@@ -62,6 +62,8 @@ For financial documents (balance sheet, P&L, cash flow, schedules, budgets):
   → always use "excel"
 For narrative documents (SOP, business plan, policy, proposal):
   → always use "word"
+For "Employee Handbook": 
+  → generate 15-20 sections covering key policies, code of conduct, benefits, etc. and use "word"
 
 No explanation. No markdown. Only JSON.
 """

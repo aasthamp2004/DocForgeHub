@@ -76,6 +76,7 @@ Rules:
 5. If user didn't provide specific numbers, use realistic placeholder values
 6. Group rows logically (Assets → Current Assets → items, then Non-Current Assets → items)
 7. Mark which rows are headers/category rows vs data rows vs total rows
+8. Always write dates in dd/mm/yyyy format (e.g. 22/12/2025, not 22/12/25 or 12/22/2025)
 
 Return STRICTLY valid JSON in this exact format:
 {{
@@ -191,6 +192,7 @@ CRITICAL RULES:
 7. header_rows = indices of pure section label rows (all value columns empty)
 8. totals_rows = indices of rows whose col[0] contains "total", "subtotal", "net", "sum"
 9. NEVER leave fewer rows than the input — output must have exactly {len(current_rows)} rows
+10. Always write dates in dd/mm/yyyy format (e.g. 22/12/2025, not 22/12/25 or 12/22/2025)
 
 Return STRICTLY valid JSON — rows must be arrays not objects:
 {{
